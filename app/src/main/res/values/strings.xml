@@ -1,0 +1,120 @@
+<resources>
+    <string name="app_name">getCr</string>
+    <string name="action_settings">Settings</string>
+    <string name="build_revision">Build Revision:</string>
+    <string name="progress_title">Downloading…</string>
+    <string name="progress_detail">Downloading Chromium…</string>
+    <string name="action_sync">Sync</string>
+    <string name="download_not_found">Download not found</string>
+    <string name="download_failed">Download failed</string>
+    <string name="download_paused">dawnload paused</string>
+    <string name="download_pending">download pending</string>
+    <string name="download_in_progress">download in progress</string>
+    <string name="download_complete">download complete</string>
+    <string name="download_is_nowhere_in_sight">no download</string>
+    <string name="hi">hi</string>
+    <string name="title_progress">getCr</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General preferences -->
+    <string name="pref_header_general">General</string>
+    <string name="pref_title_latest_build">Latest</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example preferences for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example preferences for Notifications -->
+    <string name="pref_header_notifications">Advanced</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="pref_header_advanced">Advanced</string>
+    <string name="title_first_section">Build Type:</string>
+    <string name="title_latest_build">Latest</string>
+    <string name="title_good_build">Last Known Good Revision</string>
+    <string name="pref_title_good_build_preference">Last Known Good Revision</string>
+    <string name="title_intent_preference">Learn about chromium</string>
+    <string name="title_second_section">Learn more</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="chromium_address">https://www.chromium.org</string>
+    <string name="chromium_flags_address">run-chromium-with-flags</string>
+    <string name="Chromium">Chromium</string>
+    <string name="Advanced">Advanced</string>
+    <string name="Learn">Learn</string>
+    <string name="summary_intent_preference">Intent Preference</string>
+    <string name="launch_preferences">Launch Preferences</string>
+    <string name="preference_attributes">Preference Attributes</string>
+    <string name="inline_preferences">Inline Preferences</string>
+    <string name="title_checkbox_preference">Checkbox Preferences</string>
+    <string name="summary_checkbox_preference">summary chekbox preferences</string>
+    <string name="dialog_based_preferences">Dialog Based Preferences</string>
+    <string name="summary_edittext_preference">Summary editText</string>
+    <string name="dialog_title_edittext_preference">Title</string>
+    <string name="title_list_preference">List Preference</string>
+    <string name="summary_list_preference">summary</string>
+    <string name="dialog_title_list_preference">dialog title list preferences</string>
+    <string name="title_child_preference">title child preferences</string>
+    <string name="summary_child_preference">summary child preferences</string>
+    <string name="title_parent_preference">title parent preferences</string>
+    <string name="summary_parent_preference">summary parent preferences</string>
+    <string name="title_screen_preference">title screen preferences</string>
+    <string name="summary_screen_preference">summary screen preferences</string>
+    <string name="title_next_screen_toggle_preference">screen toggle pref</string>
+    <string name="summary_next_screen_toggle_preference">summary next screen toggle</string>
+    <string name="title_activity_preferences">PreferencesActivity</string>
+    <string name="settings_header">Settings</string>
+    <string name="chromium_description">Chromium builds do not automatically update.
+        \n \nThis app installs the last known good revision.</string>
+    <string name="last_known_good_revision_title">Last Known Good Revision</string>
+    <string name="latest_title">Latest</string>
+    <string name="get_cr">getCr</string>
+    <string name="title_get_cr">getCr</string>
+</resources>

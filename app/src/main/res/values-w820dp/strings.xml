@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="build_revision">Build Revision:</string>
+    <string name="progress_title">Downloading…</string>
+    <string name="progress_detail">Downloading Chromium…</string>
+    <string name="action_sync">Sync</string>
+    <string name="download_not_found">Download not found</string>
+    <string name="download_failed">Download failed</string>
+    <string name="download_paused">dawnload paused</string>
+    <string name="download_pending">download pending</string>
+    <string name="download_in_progress">download in progress</string>
+    <string name="download_complete">download complete</string>
+    <string name="download_is_nowhere_in_sight">no download</string>
+    <string name="hi">hi</string>
+    <string name="title_progress">getCr</string>
+    <string name="pref_header_advanced">Advanced</string>
+    <string name="title_first_section">Build Type:</string>
+    <string name="title_latest_build">Latest</string>
+    <string name="title_good_build">Last Known Good Revision</string>
+    <string name="pref_title_good_build_preference">Last Known Good Revision</string>
+    <string name="title_intent_preference">Learn about chromium</string>
+    <string name="title_second_section">Learn:</string>
+    <string name="chromium_address">https://www.chromium.org</string>
+    <string name="chromium_flags_address">run-chromium-with-flags</string>
+    <string name="Chromium">Chromium</string>
+    <string name="Advanced">Advanced</string>
+    <string name="Learn">Learn</string>
+    <string name="summary_intent_preference">Intent Preference</string>
+    <string name="launch_preferences">Launch Preferences</string>
+    <string name="settings_header">Settings</string>
+    <string name="last_known_good_revision_title">Last Known Good Revision</string>
+    <string name="latest_title">Latest</string>
+    <string name="get_cr">getCr</string>
+    <string name="title_get_cr">getCr</string>
+</resources>
