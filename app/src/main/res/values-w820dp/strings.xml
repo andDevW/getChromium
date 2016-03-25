@@ -12,7 +12,7 @@
     <string name="download_complete">download complete</string>
     <string name="download_is_nowhere_in_sight">no download</string>
     <string name="hi">hi</string>
-    <string name="title_progress">getCr</string>
+    <string name="title_progress">getChromium</string>
     <string name="pref_header_advanced">Advanced</string>
     <string name="title_first_section">Build Type:</string>
     <string name="title_latest_build">Latest</string>
@@ -30,6 +30,6 @@
     <string name="settings_header">Settings</string>
     <string name="last_known_good_revision_title">Last Known Good Revision</string>
     <string name="latest_title">Latest</string>
-    <string name="get_cr">getCr</string>
-    <string name="title_get_cr">getCr</string>
+    <string name="get_cr">getChromium</string>
+    <string name="title_get_cr">getChromium</string>
 </resources>
