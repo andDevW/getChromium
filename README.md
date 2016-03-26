@@ -3,13 +3,16 @@
 ######Minimalist Android app that Installs/Updates the open-source Chromium browser.
 ######Works from API 19/Android 4.4
 ######NOTE: Chromium builds do not auto-update!  
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-14-135113.png" width="250">
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-14-135157.png" width="250">
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-14-135425.png" width="250"> <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-14-135446.png" width="250">
 
 
 ###permissions
 
-* INTERNET ('Full network access'): to download Chromium
-* ACCESS_NETWORK_STATE ('View network connections'): to check if the device is connected through Wi-Fi
-* WAKE_LOCK ('Prevent device from sleeping'): to download reliably
+* INTERNET ('Full network access'): to download Chromium builds
+* ACCESS_NETWORK_STATE ('View network connections'): to download over WiFi if available
+* WAKE_LOCK ('Prevent device from sleeping'): to enable reliable downloads
  
 
 ###support
