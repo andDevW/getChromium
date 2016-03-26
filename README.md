@@ -3,9 +3,8 @@
 ######Minimalist Android app that Installs/Updates the open-source Chromium browser.
 ######Works from API 19/Android 4.4
 ######NOTE: Chromium builds do not auto-update!  
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-14-135113.png" width="250">
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-14-135157.png" width="250">
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-14-135425.png" width="250"> <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-14-135446.png" width="250">
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-25-185544.png" width="320" height="569" /><img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-25-185701.png" width="320" height="569" />
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-25-185809.png" width="320" height="569" /><img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-25-185920.png" width="320" height="569" />
 
 
 ###permissions
