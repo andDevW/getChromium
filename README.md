@@ -7,6 +7,8 @@ ___
 ######Requires min API 19/Android 4.4
 ######NOTE: Chromium builds do not auto-update!  
 
+# [DOWNLOAD APK](https://github.com/andDevW/getChromium/releases/download/v1.1/app-release.apk)
+## [RELEASES](https://github.com/andDevW/getChromium/releases/)
 ***
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-25-185544.png" width="320" height="569" /> 
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-25-185701.png" width="320" height="569" />
