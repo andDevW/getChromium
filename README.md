@@ -1,17 +1,25 @@
-![](https://github.com/andDevW/getChromium/blob/master/app/src/main/res/mipmap-xhdpi/ic_launcher.png) 
-# getChromium
+<img src="https://github.com/andDevW/getChromium/blob/master/app/src/main/res/mipmap-xhdpi/ic_launcher.png" />
+#getChromium
+
+
+___
 ######Minimalist Android app that Installs/Updates the open-source Chromium browser.
-######Works from API 19/Android 4.4
+######Requires min API 19/Android 4.4
 ######NOTE: Chromium builds do not auto-update!  
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-25-185544.png" width="320" height="569" /><img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-25-185701.png" width="320" height="569" />
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-25-185809.png" width="320" height="569" /><img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-25-185920.png" width="320" height="569" />
 
+***
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-25-185544.png" width="320" height="569" /> 
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-25-185701.png" width="320" height="569" />
 
+***
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-25-185809.png" width="320" height="569" /> 
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-25-185920.png" width="320" height="569" />
+***
 ###permissions
 
-* INTERNET ('Full network access'): to download Chromium builds
-* ACCESS_NETWORK_STATE ('View network connections'): to download over WiFi if available
-* WAKE_LOCK ('Prevent device from sleeping'): to enable reliable downloads
+######INTERNET ('Full network access'): to download Chromium builds
+######ACCESS_NETWORK_STATE ('View network connections'): to download over WiFi if available
+######WAKE_LOCK ('Prevent device from sleeping'): to enable reliable downloads
  
 
 ###support
