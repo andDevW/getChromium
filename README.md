@@ -4,8 +4,9 @@
 
 ___
 ######Minimalist Android app that Installs/Updates the open-source Chromium browser.
+######Installs a raw build of Chromium for Android, right off the trunk. May be tremendously buggy.
 ######Requires min API 19/Android 4.4
-######NOTE: Chromium builds do not auto-update!  
+######Chromium builds do not auto-update. Simply Install Chromium again to Update. 
 
 
 ## get getChromium
@@ -49,7 +50,7 @@ getChromium uses:
 * [Volley](https://android.googlesource.com/platform/frameworks/volley/)
 
 ###license
-
+[![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
 [GNU General Public License version 3](http://www.gnu.org/licenses/gpl.txt)
 
 Copyright (c) 2015-2016 Andrew Wright (andDevW)
