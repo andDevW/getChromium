@@ -4,8 +4,6 @@
     tools:context=".GetChromium">
 
     <!-- "Mark Favorite", should appear as action button if possible -->
-
-
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
