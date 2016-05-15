@@ -32,4 +32,7 @@
     <string name="latest_title">Latest</string>
     <string name="get_cr">getChromium</string>
     <string name="title_get_cr">getChromium</string>
+    <string name="app_title">getChromium</string>
+    <string name="content_shell_icon">content_shell_icon</string>
+    <string name="warning_text">**MAY BE EXTREMELY BUGGY</string>
 </resources>
