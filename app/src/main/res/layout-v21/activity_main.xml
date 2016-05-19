@@ -27,8 +27,10 @@
         android:id="@+id/wrapper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:foregroundGravity="center_vertical">
-    <android.support.design.widget.FloatingActionButton
+        android:foregroundGravity="center_vertical"
+        android:elevation="16dp">
+
+        <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -84,7 +86,7 @@
             android:text="@string/warning_text"
             android:id="@+id/textView"
             android:layout_alignBottom="@+id/textView4"
-            android:layout_toStartOf="@+id/fabB" />
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 
