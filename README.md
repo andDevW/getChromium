@@ -46,7 +46,7 @@ Feature requests and bugs: please [create an issue on GitHub](https://github.com
 
 getChromium uses:
 
-* [Android Support Library](https://developer.android.com/topic/libraries/support-library/index.html)
+* [Android Support Library](https://developer.android.com/tools/support-library/index.html/)
 * [Volley](https://android.googlesource.com/platform/frameworks/volley/)
 
 ###license
@@ -63,7 +63,7 @@ getChromium is free software: you can redistribute it and/or modify it under the
 
 getChromium is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License along with getChromium. If not, see http://www.gnu.org/licenses/.
+You should have received a copy of the GNU General Public License along with getChromium. If not, see https://www.gnu.org/licenses/.
 
 ###trademarks
 
