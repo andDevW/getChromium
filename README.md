@@ -43,7 +43,7 @@ Feature requests and bugs: please [create an issue on GitHub](https://github.com
 
 getChromium uses:
 
-* [Android Support Library](https://developer.android.com/tools/support-library/index.html/)
+* [Android Support Library](https://developer.android.com/topic/libraries/support-library/)
 * [Volley](https://android.googlesource.com/platform/frameworks/volley/)
 
 ###license
