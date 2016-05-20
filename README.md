@@ -19,9 +19,6 @@ ___
 
 ***
 
-## donate
-![Bitcoin](https://bitcoin.org/img/icons/logotop.svg)
-`188RxvRnSXSZZnjuDdLwNirHDfNusVPobh`
 
 ***
 ***
