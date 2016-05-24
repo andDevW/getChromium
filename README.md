@@ -4,7 +4,8 @@
 
 ___
 ######Minimalist Android app that Installs/Updates the open-source Chromium browser.
-######Installs a raw build of Chromium for Android, right off the trunk. May be tremendously buggy.
+######Installs a raw build of Chromium for Android, right off the trunk. 
+######May be tremendously buggy.
 ######Requires min API 19/Android 4.4
 ######Chromium builds do not auto-update. Simply Install Chromium again to Update. 
 
@@ -31,9 +32,9 @@ ___
 ***
 ###permissions
 
-######INTERNET ('Full network access'): to download Chromium builds
-######ACCESS_NETWORK_STATE ('View network connections'): to download over WiFi if available
-######WAKE_LOCK ('Prevent device from sleeping'): to enable reliable downloads
+######INTERNET (Full network access): to download Chromium builds
+######ACCESS_NETWORK_STATE (View network connections): to download over WiFi if available
+######WAKE_LOCK (Prevent device from sleeping): to enable reliable downloads
  
 
 ###support
