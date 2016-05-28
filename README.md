@@ -8,7 +8,7 @@ ___
 ######Chromium builds do not auto-update. Simply Install Chromium again to Update. 
 ######Requires min API 19/Android 4.4
 
-#About the Chromium browser
+#about the Chromium browser
 ######You don't need getChromium to use the Chromium browser.
 ######Chromium APK courtesy of the Chromium team https://www.chromium.org/
 ######Other Ways of Getting Chromium:https://www.chromium.org/getting-involved/download-chromium
