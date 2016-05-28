@@ -3,12 +3,16 @@
 
 
 ___
-######Minimalist Android app that Installs/Updates the open-source Chromium browser.
-######Installs a raw build of Chromium for Android, right off the trunk. 
-######May be tremendously buggy.
-######Requires min API 19/Android 4.4
+######Minimalist Android app that Installs/Updates the open-source Chromium browser
+######Installs fresh Chromium in two flavors
 ######Chromium builds do not auto-update. Simply Install Chromium again to Update. 
+######Requires min API 19/Android 4.4
 
+#About the Chromium browser
+You don't need getChromium to use the Chromium browser.
+######Chromium APK courtesy of the Chromium team https://www.chromium.org/
+######Other Ways of Getting Chromium:https://www.chromium.org/getting-involved/download-chromium
+######For bugs with Chromium http://code.google.com/p/chromium/issues/entry
 
 
 
