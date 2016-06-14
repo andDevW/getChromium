@@ -25,13 +25,14 @@ ___
 
 
 ***
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222112.png" width="320" height="569" /> 
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222152.png" width="320" height="569" /> 
 ***
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-25-185544.png" width="320" height="569" /> 
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-25-185701.png" width="320" height="569" />
+
 
 ***
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-25-185809.png" width="320" height="569" /> 
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-03-25-185920.png" width="320" height="569" />
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222321.png" width="320" height="569" /> 
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222451.png" width="320" height="569" />
 ***
 ###permissions
 
