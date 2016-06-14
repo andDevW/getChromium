@@ -43,7 +43,7 @@ import com.android.volley.toolbox.StringRequest;
 import java.io.File;
 import java.io.IOException;
 
-public class GetChromium extends AppCompatActivity {
+public class   GetChromium extends AppCompatActivity {
     private static final String PREFS_NAME = "prefs";
     private static final String PREF_DARK_THEME = "dark_theme";
     private String url = "https://commondatastorage.googleapis.com/" +
