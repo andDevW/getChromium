@@ -36,7 +36,7 @@ ___
 ***
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222626.png" width="320" height="569" /> 
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222707.png" width="320" height="569" /> 
-
+***
 ###permissions
 
 ######INTERNET (Full network access): to download Chromium builds
