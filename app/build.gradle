@@ -20,6 +20,9 @@ android {
             minifyEnabled true
             debuggable false
         }
+        lintOptions {
+    checkReleaseBuilds false
+    }
     }
 }
 
