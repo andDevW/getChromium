@@ -20,6 +20,12 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
+                <intent-filter>
+                    <action android:name="android.intent.action.ACTION_VIEW" />
+
+                    <category android:name="android.intent.category.DEFAULT" />
+                </intent-filter>
             </intent-filter>
         </activity>
     </application>
