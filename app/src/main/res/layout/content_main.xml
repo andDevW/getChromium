@@ -10,46 +10,29 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".GetChromium"
-    tools:showIn="@layout/activity_main">
-
-
-    <TextView
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:textStyle="normal"
-        android:singleLine="true"
-        android:drawablePadding="2dp"
-        android:text="@string/build_revision"
-        android:id="@+id/textView1"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:gravity="center_vertical|fill_vertical"
-        android:typeface="sans" />
+    tools:showIn="@layout/activity_main"
+    android:hapticFeedbackEnabled="false">
 
     <TextView
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/textView2"
-        android:typeface="sans"
-        android:textStyle="normal"
-        android:singleLine="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignEnd="@id/textView1"
-        android:layout_toEndOf="@id/textView1" />
-
-    <TextView
+        android:id="@+id/textView3"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/chromium_description"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/textView1"
+        android:typeface="sans"
+        android:layout_below="@+id/switch1"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="38dp"
-        android:layout_alignEnd="@+id/textView2"
-        android:typeface="sans"/>
+        android:layout_marginTop="91dp"
+        android:layout_alignEnd="@+id/switch1" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:soundEffectsEnabled="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

@@ -111,10 +111,14 @@
     <string name="summary_next_screen_toggle_preference">summary next screen toggle</string>
     <string name="title_activity_preferences">PreferencesActivity</string>
     <string name="settings_header">Settings</string>
-    <string name="chromium_description">Chromium builds do not automatically update.
-        \n \nThis app installs the last known good revision.</string>
-    <string name="last_known_good_revision_title">Last Known Good Revision</string>
+    <string name="chromium_description">Chromium builds don\'t auto-update.\n
+        \nThis app always installs the\n \ Latest build of Chromium.\n
+        \n   \ // May be extremely buggy.</string>
     <string name="latest_title">Latest</string>
     <string name="get_cr">getChromium</string>
     <string name="title_get_cr">getChromium</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
+    <string name="build_revision_button">Build Revision :</string>
 </resources>
