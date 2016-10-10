@@ -20,9 +20,8 @@
         android:layout_height="wrap_content"
         android:text="@string/chromium_description"
         android:typeface="sans"
-        android:layout_below="@+id/switch1"
+        android:autoLink="web"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="91dp"
         android:layout_alignEnd="@+id/switch1" />
 
     <Switch
@@ -34,5 +33,27 @@
         android:soundEffectsEnabled="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="MORE INFORMATION/BUILD INFO"
+        android:elevation="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:typeface="sans"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:layout_marginTop="107dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="GETTING INVOLVED"
+        android:elevation="4dp"
+        android:typeface="sans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:layout_below="@+id/button2"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

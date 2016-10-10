@@ -1,22 +1,24 @@
 package com.anddevw.getchromium;
 
-import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
+
 import com.anddevw.getchromium.Util.DecompressZip;
 import com.anddevw.getchromium.Util.DownloadChromiumApk;
 import com.anddevw.getchromium.Util.GetStorage;
@@ -33,24 +35,33 @@ import com.android.volley.toolbox.StringRequest;
 import java.io.File;
 import java.io.IOException;
 
-public class   GetChromium extends AppCompatActivity {
+public class GetChromium extends AppCompatActivity {
     private static final String PREFS_NAME = "prefs";
     private static final String PREF_DARK_THEME = "dark_theme";
-    static final String ACTION_VIEW = "com.anddevw.getchromium.VIEW";
+    private static final int REQUEST_ENABLE_UNKNOWN_SOURCES = 1;
+
+    public static String WIDGET_BUTTON = "com.anddevw.getchromium.WIDGET_BUTTON";
+
+    // private Intent mServiceIntent;
+
+
     protected ProgressDialog mProgressDialog;
 
     private String urlC = "https://commondatastorage.googleapis.com/" +
             "chromium-browser-snapshots/Android/LAST_CHANGE";
+    private String urlA = "https://blog.chromium.org/";
+    private String urlB = "https://www.chromium.org/getting-involved";
 
-    RequestQueue mRequestQueue;
     public static final String TAG = "MyTag";
+    RequestQueue mRequestQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        boolean useDarkTheme = preferences.getBoolean(PREF_DARK_THEME, false);
 
-        if (useDarkTheme) {
+        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        boolean useLightTheme = preferences.getBoolean(PREF_DARK_THEME, true);
+
+        if (useLightTheme) {
             setTheme(R.style.AppTheme_Dark_NoActionBar);
         }
 
@@ -63,14 +74,15 @@ public class   GetChromium extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                runSetup();
-                downloadLastChange();
+                 //checkFirstRun();
+                 runSetup();
+                 downloadLastChange();
                 return;
             }
         });
 
         Switch toggle = (Switch) findViewById(R.id.switch1);
-        toggle.setChecked(useDarkTheme);
+        toggle.setChecked(useLightTheme);
         toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton view, boolean isChecked) {
@@ -78,13 +90,33 @@ public class   GetChromium extends AppCompatActivity {
 
             }
         });
+
+        Button buttonA = (Button) findViewById(R.id.button2);
+        buttonA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBlogA();
+            }
+        });
+
+        Button buttonB = (Button) findViewById(R.id.button3);
+        buttonB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBlogB();
+            }
+        });
+
     }
 
-    public void runSetup() {
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        isNetworkAvailable();
-        isOnline();
-        isNetworkAvailable();
+    public void checkFirstRun() {
+        boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isFirstRun", true);
+        if (isFirstRun){
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                    .edit()
+                    .putBoolean("isFirstRun", false)
+                    .apply();
+        }
     }
 
     private void toggleTheme(boolean darkTheme) {
@@ -98,11 +130,11 @@ public class   GetChromium extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private Boolean isNetworkAvailable() {
-        ConnectivityManager connectivityManager
-                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
+    public void runSetup() {
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        isNetworkAvailable();
+        isOnline();
+        isNetworkAvailable();
     }
 
     public boolean isOnline() {
@@ -118,6 +150,31 @@ public class   GetChromium extends AppCompatActivity {
         }
         return false;
     }
+
+    private Boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
+    }
+
+//    private void checkPermissions() {
+//        boolean isNonPlayAppAllowed = Settings.Secure.getInt(getContentResolver(), Settings.Secure.INSTALL_NON_MARKET_APPS) == 1;
+//        if (!isNonPlayAppAllowed) {
+//            startActivity(new Intent(android.provider.Settings.ACTION_SECURITY_SETTINGS));
+//        }
+//            launchSecuritySettings();
+//        } else {
+//
+//            runSetup();
+//            downloadLastChange();
+//        }
+
+
+//    private void launchSecuritySettings() {
+//        Intent launchSettingsIntent = new Intent(Settings.ACTION_SECURITY_SETTINGS);
+//        startActivityForResult(launchSettingsIntent, REQUEST_ENABLE_UNKNOWN_SOURCES);
+//    }
 
     public void downloadLastChange() {
 
@@ -141,6 +198,7 @@ public class   GetChromium extends AppCompatActivity {
                         new DownloadTask().execute(apkUrl);
                     }
                 },
+
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
@@ -214,7 +272,7 @@ public class   GetChromium extends AppCompatActivity {
             DownloadChromiumApk.download(url, zipFile, zipDir);
             unzipFile( zipFile, outputDir );
         } finally {
-            instChromium();
+         instChromium();
         }
     }
 
@@ -232,6 +290,22 @@ public class   GetChromium extends AppCompatActivity {
         DecompressZip decomp = new DecompressZip( zipFile.getPath(),
                 destination.getPath() + File.separator );
         decomp.unzip();
+    }
+
+    public void openBlogA() {
+        Uri webpage = Uri.parse(urlA);
+        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
+
+      public void openBlogB() {
+        Uri webpage = Uri.parse(urlB);
+        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 
     @Override

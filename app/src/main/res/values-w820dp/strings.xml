@@ -33,4 +33,9 @@
     <string name="get_cr">getChromium</string>
     <string name="title_get_cr">getChromium</string>
     <string name="build_revision_button">Build Revision :</string>
+    <string name="downloading">downloading...</string>
+    <string name="inprogress">in progress</string>
+    <string name="dialog_check_settings">check settings</string>
+    <string name="check">View Settings</string>
+    <string name="skip">Skip</string>
 </resources>
