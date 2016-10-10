@@ -34,4 +34,8 @@
     <style name="AppTheme.Dark.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.Dark.PopupOverlay" parent="ThemeOverlay.AppCompat" />
 
+        <style name="NotificationContent" parent="@android:style/TextAppearance.Small">
+            <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+        </style>
+
 </resources>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="build_revision">Build Revision:</string>
-    <string name="progress_title">Downloading…</string>
-    <string name="progress_detail">Downloading Chromium…</string>
+    <string name="progress_title">downloading…</string>
+    <string name="progress_detail">downloading Chromium…</string>
     <string name="action_sync">Sync</string>
     <string name="download_not_found">Download not found</string>
     <string name="download_failed">Download failed</string>
@@ -33,4 +33,9 @@
     <string name="get_cr">getChromium</string>
     <string name="title_get_cr">getChromium</string>
     <string name="build_revision_button">Build Revision :</string>
+    <string name="downloading">downloading...</string>
+    <string name="inprogress">in progress</string>
+    <string name="dialog_check_settings">check settings</string>
+    <string name="check">View Settings</string>
+    <string name="skip">Skip</string>
 </resources>

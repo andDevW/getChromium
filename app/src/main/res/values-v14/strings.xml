@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="build_revision_button">Build Revision :</string>
+    <string name="downloading">downloading...</string>
+    <string name="inprogress">in progress</string>
+    <string name="dialog_check_settings">check settings</string>
+    <string name="check">View Settings</string>
+    <string name="skip">Skip</string>
 </resources>
