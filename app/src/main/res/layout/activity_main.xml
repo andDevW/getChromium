@@ -32,18 +32,23 @@
         android:layout_height="match_parent"
         android:foregroundGravity="center_vertical">
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:src="@drawable/ic_getchromium"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginRight="@dimen/fab_margin"
-        android:layout_marginBottom="26dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="27dp" />
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@drawable/ic_getchromium" />
 
+        <ImageButton
+            android:id="@+id/button4"
+            android:background="@drawable/ic_cog_40_gray_02"
+            android:elevation="4dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/fabA"
+            android:layout_toStartOf="@+id/fabA" />
     </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>

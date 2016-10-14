@@ -19,32 +19,28 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
 
                 <intent-filter>
                     <action android:name="android.intent.action.ACTION_SECURITY_SETTINGS" />
-
                     <category android:name="android.intent.category.DEFAULT" />
                 </intent-filter>
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-                <!-- Include the host attribute if you want your app to respond
-                     only to URLs with your app's domain. -->
                 <data android:scheme="https" android:host="://blog.chromium.org/" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <!-- The BROWSABLE category is required to get links from web pages. -->
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-                <!-- Include the host attribute if you want your app to respond
-                     only to URLs with your app's domain. -->
                 <data android:scheme="https" android:host="://www.chromium.org/getting-involved" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <!-- The BROWSABLE category is required to get links from web pages. -->
                 <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.content.pm.action.CONFIRM_PERMISSIONS" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <receiver android:name=".GetWidgetProvider" android:label="updater">
