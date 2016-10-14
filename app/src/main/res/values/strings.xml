@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:http="http://schemas.android.com/tools">
     <string name="app_name">getChromium</string>
     <string name="action_settings">Settings</string>
     <string name="build_revision">Build Revision:</string>
@@ -111,9 +111,18 @@
     <string name="summary_next_screen_toggle_preference">summary next screen toggle</string>
     <string name="title_activity_preferences">PreferencesActivity</string>
     <string name="settings_header">Settings</string>
-    <string name="chromium_description"> \nThis app always installs the\n Latest build of Chromium.\n
-        \nChromium APK courtesy of \nthe Chromium team \nhttps://www.chromium.org\n \nChromium builds don\'t auto-update.\n
-        \n   \ // May be extremely buggy. </string>
+
+    <string name="chromium_description_01">Installs the latest build of Chromium.</string>
+    <string name="chromium_description_02">Chromium builds don\'t auto-update.</string>
+    <string name="chromium_description_03">Install again to update Chromium.</string>
+    <string name="chromium_description_04">// It may be tremendously buggy.</string>
+    <string name="chromium_description_05">APK courtesy of Chromium team</string>
+    <string name="chromium_description_06"></string>
+    <string name="chromium_description_07">https://www.chromium.org</string>
+
+    <string name="chromium_button_01"> getting involved </string>
+    <string name="chromium_button_02"> more information/build info</string>
+
     <string name="latest_title">Latest</string>
     <string name="get_cr">getChromium</string>
     <string name="title_get_cr">getChromium</string>
@@ -126,5 +135,11 @@
     <string name="dialog_check_settings">check settings</string>
     <string name="check">View Settings</string>
     <string name="skip">Skip</string>
+    <string name="unknown_apps_dlg_title">Install blocked</string>
+    <string name="unknown_apps_dlg_text">For security, your phone is set\\nto  block installation of apps obtained \\nfrom unknown sources.</string>
+    <string name="cancel">CANCEL</string>
+    <string name="settings">SETTINGS</string>
+    <string name="ok">OK</string>
+    <string name="more_information_build_info">MORE INFORMATION/BUILD INFO</string>
 
 </resources>

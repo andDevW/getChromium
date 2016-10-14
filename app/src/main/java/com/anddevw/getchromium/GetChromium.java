@@ -2,6 +2,7 @@ package com.anddevw.getchromium;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -38,12 +40,8 @@ import java.io.IOException;
 public class GetChromium extends AppCompatActivity {
     private static final String PREFS_NAME = "prefs";
     private static final String PREF_DARK_THEME = "dark_theme";
-    private static final int REQUEST_ENABLE_UNKNOWN_SOURCES = 1;
 
     public static String WIDGET_BUTTON = "com.anddevw.getchromium.WIDGET_BUTTON";
-
-    // private Intent mServiceIntent;
-
 
     protected ProgressDialog mProgressDialog;
 
@@ -55,13 +53,14 @@ public class GetChromium extends AppCompatActivity {
     public static final String TAG = "MyTag";
     RequestQueue mRequestQueue;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        boolean useLightTheme = preferences.getBoolean(PREF_DARK_THEME, true);
-
-        if (useLightTheme) {
+        // set dark theme as default
+        boolean useDarkTheme = preferences.getBoolean(PREF_DARK_THEME, true);
+        if (useDarkTheme) {
             setTheme(R.style.AppTheme_Dark_NoActionBar);
         }
 
@@ -70,19 +69,28 @@ public class GetChromium extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabA);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                 //checkFirstRun();
+                //checkFirstRun();
                  runSetup();
                  downloadLastChange();
                 return;
             }
         });
 
+        ImageButton imageButton = (ImageButton) findViewById(R.id.button4);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchSecuritySettings();
+                return;
+            }
+        });
+
         Switch toggle = (Switch) findViewById(R.id.switch1);
-        toggle.setChecked(useLightTheme);
+        toggle.setChecked(useDarkTheme);
         toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton view, boolean isChecked) {
@@ -91,32 +99,21 @@ public class GetChromium extends AppCompatActivity {
             }
         });
 
-        Button buttonA = (Button) findViewById(R.id.button2);
+        Button buttonA = (Button) findViewById(R.id.button1);
         buttonA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openBlogA();
-            }
-        });
-
-        Button buttonB = (Button) findViewById(R.id.button3);
-        buttonB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openBlogB();
             }
         });
 
-    }
-
-    public void checkFirstRun() {
-        boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isFirstRun", true);
-        if (isFirstRun){
-            getSharedPreferences("PREFERENCE", MODE_PRIVATE)
-                    .edit()
-                    .putBoolean("isFirstRun", false)
-                    .apply();
-        }
+        Button buttonB = (Button) findViewById(R.id.button2);
+        buttonB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBlogA();
+            }
+        });
     }
 
     private void toggleTheme(boolean darkTheme) {
@@ -158,26 +155,30 @@ public class GetChromium extends AppCompatActivity {
         return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
     }
 
-//    private void checkPermissions() {
-//        boolean isNonPlayAppAllowed = Settings.Secure.getInt(getContentResolver(), Settings.Secure.INSTALL_NON_MARKET_APPS) == 1;
+//    // WORKING, NEEDS TO BE BETTER
+//    private void checkPermissions() throws Settings.SettingNotFoundException {
+//        boolean isNonPlayAppAllowed = Settings.Secure.getInt(getContentResolver(),
+//        Settings.Secure.INSTALL_NON_MARKET_APPS) == 1;
 //        if (!isNonPlayAppAllowed) {
-//            startActivity(new Intent(android.provider.Settings.ACTION_SECURITY_SETTINGS));
-//        }
 //            launchSecuritySettings();
+//            runSetup();
+//            downloadLastChange();
 //        } else {
-//
 //            runSetup();
 //            downloadLastChange();
 //        }
-
-
-//    private void launchSecuritySettings() {
-//        Intent launchSettingsIntent = new Intent(Settings.ACTION_SECURITY_SETTINGS);
-//        startActivityForResult(launchSettingsIntent, REQUEST_ENABLE_UNKNOWN_SOURCES);
 //    }
 
-    public void downloadLastChange() {
+    private void launchSecuritySettings() {
 
+            Intent launchSettingsIntent = new Intent(android.provider.Settings.ACTION_SECURITY_SETTINGS);
+            launchSettingsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(launchSettingsIntent);
+          //finish();
+        }
+
+    public void downloadLastChange() {
+        //  displayProgress();
         Cache cache = new DiskBasedCache(getCacheDir(), 1024 * 1024);
         com.android.volley.Network network = new BasicNetwork(new HurlStack());
         mRequestQueue = new RequestQueue(cache, network);
@@ -307,7 +308,10 @@ public class GetChromium extends AppCompatActivity {
             startActivity(intent);
         }
     }
-
+        // Generic handling when pressing back key
+        public void onCancel(DialogInterface dialog) {
+            finish();
+        }
     @Override
     protected void onStop () {
         super.onStop();
