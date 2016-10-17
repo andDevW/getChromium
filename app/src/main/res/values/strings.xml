@@ -121,7 +121,7 @@
     <string name="chromium_description_07">https://www.chromium.org</string>
 
     <string name="chromium_button_01"> getting involved </string>
-    <string name="chromium_button_02"> more information/build info</string>
+    <string name="chromium_button_02">get involved</string>
 
     <string name="latest_title">Latest</string>
     <string name="get_cr">getChromium</string>

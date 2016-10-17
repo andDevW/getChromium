@@ -35,29 +35,6 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="10dp"/>
 
-    <Button
-        android:id="@+id/button1"
-        android:text="@string/chromium_button_01"
-        android:typeface="sans"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:elevation="4dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button2"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:id="@+id/button2"
-        android:text="@string/chromium_button_02"
-        android:typeface="sans"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:elevation="4dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_below="@+id/textView7"
-        android:layout_alignParentStart="true" />
-
     <TextView
         android:id="@+id/textView4"
         android:text="@string/chromium_description_04"
@@ -112,5 +89,18 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView5"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/button1"
+        android:text="@string/chromium_button_02"
+        android:typeface="sans"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:elevation="4dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView7"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/textView7" />
 
 </RelativeLayout>
