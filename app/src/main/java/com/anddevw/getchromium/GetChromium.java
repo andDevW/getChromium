@@ -2,7 +2,6 @@ package com.anddevw.getchromium;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
@@ -10,6 +9,7 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -37,18 +37,22 @@ import com.android.volley.toolbox.StringRequest;
 import java.io.File;
 import java.io.IOException;
 
+import static com.anddevw.getchromium.R.id.fabA;
+
 public class GetChromium extends AppCompatActivity {
     private static final String PREFS_NAME = "prefs";
     private static final String PREF_DARK_THEME = "dark_theme";
 
     public static String WIDGET_BUTTON = "com.anddevw.getchromium.WIDGET_BUTTON";
 
+
     protected ProgressDialog mProgressDialog;
 
-    private String urlC = "https://commondatastorage.googleapis.com/" +
+    private String urlL = "https://commondatastorage.googleapis.com/" +
             "chromium-browser-snapshots/Android/LAST_CHANGE";
-    private String urlA = "https://blog.chromium.org/";
-    private String urlB = "https://www.chromium.org/getting-involved";
+    private String urlC = "https://commondatastorage.googleapis.com/" +
+            "chromium-browser-continuous/Android/LAST_CHANGE";
+    private String urlA = "https://www.chromium.org/getting-involved";
 
     public static final String TAG = "MyTag";
     RequestQueue mRequestQueue;
@@ -68,14 +72,16 @@ public class GetChromium extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        final Vibrator signalAltInstall = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE) ;
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabA);
+        // Download Chromium latest build
+        FloatingActionButton fab = (FloatingActionButton) findViewById(fabA);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //checkFirstRun();
-                 runSetup();
-                 downloadLastChange();
+                signalAltInstall.vibrate(100);
+                runSetup();
+                downloadLatest();
                 return;
             }
         });
@@ -101,14 +107,6 @@ public class GetChromium extends AppCompatActivity {
 
         Button buttonA = (Button) findViewById(R.id.button1);
         buttonA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openBlogB();
-            }
-        });
-
-        Button buttonB = (Button) findViewById(R.id.button2);
-        buttonB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openBlogA();
@@ -162,10 +160,10 @@ public class GetChromium extends AppCompatActivity {
 //        if (!isNonPlayAppAllowed) {
 //            launchSecuritySettings();
 //            runSetup();
-//            downloadLastChange();
+//            downloadLatest();
 //        } else {
 //            runSetup();
-//            downloadLastChange();
+//            downloadLatest();
 //        }
 //    }
 
@@ -177,14 +175,14 @@ public class GetChromium extends AppCompatActivity {
           //finish();
         }
 
-    public void downloadLastChange() {
+    public void downloadLatest() {
         //  displayProgress();
         Cache cache = new DiskBasedCache(getCacheDir(), 1024 * 1024);
         com.android.volley.Network network = new BasicNetwork(new HurlStack());
         mRequestQueue = new RequestQueue(cache, network);
         mRequestQueue.start();
 
-        final StringRequest stringRequest = new StringRequest(Request.Method.GET, urlC,
+        final StringRequest stringRequest = new StringRequest(Request.Method.GET, urlL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -208,6 +206,41 @@ public class GetChromium extends AppCompatActivity {
 
         mRequestQueue.add(stringRequest);
     }
+
+    // Removed due to lack of updates
+//    public void downloadLKGR() {
+//
+//        Cache cache1 = new DiskBasedCache(getCacheDir(), 1024 * 1024);
+//        com.android.volley.Network network = new BasicNetwork(new HurlStack());
+//        mRequestQueue = new RequestQueue(cache1, network);
+//        mRequestQueue.start();
+//
+//        final StringRequest stringRequest = new StringRequest(Request.Method.GET, urlC,
+//                new Response.Listener<String>() {
+//                    @Override
+//                    public void onResponse(String response) {
+//                        Uri.Builder builder = new Uri.Builder();
+//                        builder.scheme("https")
+//                                .authority("commondatastorage.googleapis.com")
+//                                .appendPath("chromium-browser-continuous")
+//                                .appendPath("Android")
+//                                .appendPath(response)
+//                                .appendPath("chrome-android.zip");
+//                        String apkUrl = builder.build().toString();
+//                        new DownloadTask().execute(apkUrl);
+//                    }
+//                },
+//                new Response.ErrorListener() {
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) {
+//                        Toast.makeText(getBaseContext(),
+//                                "CHECK NETWORK", Toast.LENGTH_LONG);
+//                    }
+//                });
+//
+//        mRequestQueue.add(stringRequest);
+//    }
+
 
     private class DownloadTask extends AsyncTask<String, Void, Exception> {
         @Override
@@ -254,7 +287,6 @@ public class GetChromium extends AppCompatActivity {
     }
 
     protected void dismissProgress() {
-        // You can't be too careful.
         if (mProgressDialog != null && mProgressDialog.
                 isShowing() && mProgressDialog.getWindow() != null) {
             try {
@@ -301,17 +333,6 @@ public class GetChromium extends AppCompatActivity {
         }
     }
 
-      public void openBlogB() {
-        Uri webpage = Uri.parse(urlB);
-        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
-    }
-        // Generic handling when pressing back key
-        public void onCancel(DialogInterface dialog) {
-            finish();
-        }
     @Override
     protected void onStop () {
         super.onStop();

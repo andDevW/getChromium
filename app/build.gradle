@@ -9,8 +9,8 @@ android {
         applicationId "com.anddevw.getchromium"
         minSdkVersion 19
         targetSdkVersion 23
-        versionCode 2
-        versionName "2.0"
+        versionCode 3
+        versionName "3.0"
     }
     buildTypes {
         release {
@@ -38,5 +38,5 @@ dependencies {
     compile 'com.android.support:design:23.3.0'
     compile 'com.android.support:support-v4:23.3.0'
     // ONLY FOR f-droid VARIANT!!
-    // compile 'com.mcxiaoke.volley:library:1.0.19'
+    compile 'com.mcxiaoke.volley:library:1.0.19'
 }
