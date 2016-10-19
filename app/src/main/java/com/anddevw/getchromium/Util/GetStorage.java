@@ -17,9 +17,7 @@ public class GetStorage {
 
     public static File getDir(Context context, String dirName) {
         File cacheDir = null;
-
         if ( android.os.Environment.MEDIA_MOUNTED.equals(android.os.Environment.getExternalStorageState()) ) {
-
             Method getExternalFilesDirMethod = null;
             try {
                 getExternalFilesDirMethod = Context.class.getMethod( "getExternalFilesDir", String.class );
@@ -34,9 +32,7 @@ public class GetStorage {
                 cacheDir = buildCacheDirPath( context, android.os.Environment.getExternalStorageDirectory(), dirName );
             }
         }
-
         if ( cacheDir == null ) {
-
             for ( int i = 0; i < ALTERNATE_SDCARD_MOUNTS.length; i++ ) {
                 File alternateDir = new File( ALTERNATE_SDCARD_MOUNTS[i] );
                 if ( alternateDir.exists() && alternateDir.isDirectory() &&
@@ -46,20 +42,16 @@ public class GetStorage {
                 }
             }
         }
-
         if ( cacheDir != null && !cacheDir.exists() ) {
             if ( !cacheDir.mkdirs() ) {
                 cacheDir = null;
             }
         }
-
         if ( cacheDir == null ) {
             cacheDir = new File( context.getCacheDir() + File.separator + dirName );
             cacheDir.mkdirs();
         }
-
         return cacheDir;
-
     }
 
     public static void clearSDCache( Context context, String dirName ) {

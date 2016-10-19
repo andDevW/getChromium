@@ -9,7 +9,6 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -42,27 +41,19 @@ import static com.anddevw.getchromium.R.id.fabA;
 public class GetChromium extends AppCompatActivity {
     private static final String PREFS_NAME = "prefs";
     private static final String PREF_DARK_THEME = "dark_theme";
-
     public static String WIDGET_BUTTON = "com.anddevw.getchromium.WIDGET_BUTTON";
-
-
     protected ProgressDialog mProgressDialog;
-
     private String urlL = "https://commondatastorage.googleapis.com/" +
             "chromium-browser-snapshots/Android/LAST_CHANGE";
-    private String urlC = "https://commondatastorage.googleapis.com/" +
-            "chromium-browser-continuous/Android/LAST_CHANGE";
     private String urlA = "https://www.chromium.org/getting-involved";
-
-    public static final String TAG = "MyTag";
+    public static final String TAG = "getChromium";
     RequestQueue mRequestQueue;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        // set dark theme as default
+
+        // Set dark theme as default
         boolean useDarkTheme = preferences.getBoolean(PREF_DARK_THEME, true);
         if (useDarkTheme) {
             setTheme(R.style.AppTheme_Dark_NoActionBar);
@@ -72,21 +63,22 @@ public class GetChromium extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        final Vibrator signalAltInstall = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE) ;
+        // Vibrate
+        // final Vibrator signalInstall = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE) ;
 
-        // Download Chromium latest build
         FloatingActionButton fab = (FloatingActionButton) findViewById(fabA);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                signalAltInstall.vibrate(100);
+                // Vibrate
+                // signalInstall.vibrate(300);
                 runSetup();
                 downloadLatest();
                 return;
             }
         });
 
-        ImageButton imageButton = (ImageButton) findViewById(R.id.button4);
+        ImageButton imageButton = (ImageButton) findViewById(R.id.buttonCog);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -126,10 +118,17 @@ public class GetChromium extends AppCompatActivity {
     }
 
     public void runSetup() {
+        // Keep device awake
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         isNetworkAvailable();
         isOnline();
-        isNetworkAvailable();
+    }
+
+    private Boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager = (ConnectivityManager)
+                getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
     }
 
     public boolean isOnline() {
@@ -146,29 +145,7 @@ public class GetChromium extends AppCompatActivity {
         return false;
     }
 
-    private Boolean isNetworkAvailable() {
-        ConnectivityManager connectivityManager
-                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
-    }
-
-//    // WORKING, NEEDS TO BE BETTER
-//    private void checkPermissions() throws Settings.SettingNotFoundException {
-//        boolean isNonPlayAppAllowed = Settings.Secure.getInt(getContentResolver(),
-//        Settings.Secure.INSTALL_NON_MARKET_APPS) == 1;
-//        if (!isNonPlayAppAllowed) {
-//            launchSecuritySettings();
-//            runSetup();
-//            downloadLatest();
-//        } else {
-//            runSetup();
-//            downloadLatest();
-//        }
-//    }
-
     private void launchSecuritySettings() {
-
             Intent launchSettingsIntent = new Intent(android.provider.Settings.ACTION_SECURITY_SETTINGS);
             launchSettingsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(launchSettingsIntent);
@@ -176,7 +153,6 @@ public class GetChromium extends AppCompatActivity {
         }
 
     public void downloadLatest() {
-        //  displayProgress();
         Cache cache = new DiskBasedCache(getCacheDir(), 1024 * 1024);
         com.android.volley.Network network = new BasicNetwork(new HurlStack());
         mRequestQueue = new RequestQueue(cache, network);
@@ -207,41 +183,6 @@ public class GetChromium extends AppCompatActivity {
         mRequestQueue.add(stringRequest);
     }
 
-    // Removed due to lack of updates
-//    public void downloadLKGR() {
-//
-//        Cache cache1 = new DiskBasedCache(getCacheDir(), 1024 * 1024);
-//        com.android.volley.Network network = new BasicNetwork(new HurlStack());
-//        mRequestQueue = new RequestQueue(cache1, network);
-//        mRequestQueue.start();
-//
-//        final StringRequest stringRequest = new StringRequest(Request.Method.GET, urlC,
-//                new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//                        Uri.Builder builder = new Uri.Builder();
-//                        builder.scheme("https")
-//                                .authority("commondatastorage.googleapis.com")
-//                                .appendPath("chromium-browser-continuous")
-//                                .appendPath("Android")
-//                                .appendPath(response)
-//                                .appendPath("chrome-android.zip");
-//                        String apkUrl = builder.build().toString();
-//                        new DownloadTask().execute(apkUrl);
-//                    }
-//                },
-//                new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        Toast.makeText(getBaseContext(),
-//                                "CHECK NETWORK", Toast.LENGTH_LONG);
-//                    }
-//                });
-//
-//        mRequestQueue.add(stringRequest);
-//    }
-
-
     private class DownloadTask extends AsyncTask<String, Void, Exception> {
         @Override
         protected void onPreExecute() {
@@ -251,13 +192,11 @@ public class GetChromium extends AppCompatActivity {
         @Override
         protected Exception doInBackground(String... params) {
             String url = params[0];
-
             try {
                 downloadAllAssets(url);
             } catch (Exception e) {
                 return e;
             }
-
             return null;
         }
 
@@ -294,6 +233,7 @@ public class GetChromium extends AppCompatActivity {
             } catch ( IllegalArgumentException ignore ) {
             }
         }
+
         mProgressDialog = null;
     }
 
@@ -305,6 +245,7 @@ public class GetChromium extends AppCompatActivity {
             DownloadChromiumApk.download(url, zipFile, zipDir);
             unzipFile( zipFile, outputDir );
         } finally {
+
          instChromium();
         }
     }
@@ -323,8 +264,10 @@ public class GetChromium extends AppCompatActivity {
         DecompressZip decomp = new DecompressZip( zipFile.getPath(),
                 destination.getPath() + File.separator );
         decomp.unzip();
+        dismissProgress();
     }
 
+    // Link to Chromium Project 'Getting Involved'.
     public void openBlogA() {
         Uri webpage = Uri.parse(urlA);
         Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
@@ -338,6 +281,22 @@ public class GetChromium extends AppCompatActivity {
         super.onStop();
         if (mRequestQueue != null) {
             mRequestQueue.cancelAll(TAG);
+
+//    WORKING, NEEDS TO BE BETTER
+//
+//    private void checkPermissions() throws Settings.SettingNotFoundException {
+//        boolean isNonPlayAppAllowed = Settings.Secure.getInt(getContentResolver(),
+//        Settings.Secure.INSTALL_NON_MARKET_APPS) == 1;
+//        if (!isNonPlayAppAllowed) {
+//            launchSecuritySettings();
+//            runSetup();
+//            downloadLatest();
+//        } else {
+//            runSetup();
+//            downloadLatest();
+//        }
+//    }
+
         }
     }
 }

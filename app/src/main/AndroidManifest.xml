@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.anddevw.getchromium">
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Internet Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <!-- Network State Permissions -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Wake-Lock Permissions -->
+    <!-- <uses-permission android:name="android.permission.WAKE_LOCK" />  -->
+    <!-- Vibrate Permissions -->
+    <!-- <uses-permission android:name="android.permission.VIBRATE"/> -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,7 +23,6 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-
                 <intent-filter>
                     <action android:name="android.intent.action.ACTION_SECURITY_SETTINGS" />
                     <category android:name="android.intent.category.DEFAULT" />

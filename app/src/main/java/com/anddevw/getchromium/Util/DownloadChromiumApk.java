@@ -16,7 +16,6 @@ public class DownloadChromiumApk  {
         InputStream is = null;
         OutputStream os = null;
         File tmp = null;
-
         try {
             tmp = File.createTempFile( "download", ".tmp", tmpDir );
             is = new URL(url).openStream();
