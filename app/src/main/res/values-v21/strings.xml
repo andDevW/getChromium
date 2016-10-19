@@ -44,4 +44,5 @@
     <string name="settings">SETTINGS</string>
     <string name="ok">OK</string>
     <string name="dialog_title">Install blocked</string>
+    <string name="progress_detail2">Unzipping...</string>
 </resources>

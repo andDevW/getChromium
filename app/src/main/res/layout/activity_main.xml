@@ -43,8 +43,9 @@
             android:src="@drawable/ic_getchromium" />
 
         <ImageButton
-            android:id="@+id/button4"
-            android:background="@drawable/ic_cog_40_gray_02"
+            android:id="@+id/buttonCog"
+            android:background="@drawable/ic_cog_40_blue_03"
+            android:src="@drawable/ic_cog_40_gray_02"
             android:elevation="4dp"
             android:layout_width="40dp"
             android:layout_height="40dp"

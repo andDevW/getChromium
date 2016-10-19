@@ -141,5 +141,6 @@
     <string name="settings">SETTINGS</string>
     <string name="ok">OK</string>
     <string name="more_information_build_info">MORE INFORMATION/BUILD INFO</string>
+    <string name="progress_detail2">Unzipping...</string>
 
 </resources>
