@@ -44,8 +44,7 @@
 
         <ImageButton
             android:id="@+id/buttonCog"
-            android:background="@drawable/ic_cog_40_blue_03"
-            android:src="@drawable/ic_cog_40_gray_02"
+            android:background="@drawable/cog_button"
             android:elevation="4dp"
             android:layout_width="40dp"
             android:layout_height="40dp"
