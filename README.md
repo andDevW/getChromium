@@ -4,11 +4,11 @@
 
 ___
 ######Installs/Updates the open-source Chromium browser
-######Installs fresh Chromium every time
 ######Chromium builds do not auto-update. Simply Install Chromium again to Update. 
+######// It may be tremendously buggy.
 ######Requires min API 19/Android 4.4
 
-#about the Chromium browser
+#about
 ######You don't need getChromium to use the Chromium browser.
 ######Chromium APK courtesy of the Chromium team https://www.chromium.org/
 ######Other Ways of Getting Chromium:https://www.chromium.org/getting-involved/download-chromium
@@ -38,7 +38,7 @@ ___
 
 ######INTERNET (Full network access): to download Chromium builds
 ######ACCESS_NETWORK_STATE (View network connections): to download over WiFi if available
-######WAKE_LOCK (Prevent device from sleeping): to enable reliable downloads
+
  
 
 ###support
