@@ -9,7 +9,7 @@ android {
         applicationId "com.anddevw.getchromium"
         minSdkVersion 19
         targetSdkVersion 23
-        versionCode 3
+        versionCode 20161021
         versionName "3.0"
     }
     buildTypes {
