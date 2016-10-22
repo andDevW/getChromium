@@ -5,7 +5,7 @@
 ___
 ######Installs/Updates the open-source Chromium browser
 ######Chromium builds do not auto-update. Simply Install Chromium again to Update. 
-######// It may be tremendously buggy.
+######Chromium may be tremendously buggy.
 ######Requires min API 19/Android 4.4
 
 #about
