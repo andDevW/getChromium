@@ -3,20 +3,21 @@
 
 
 ___
-######Installs/Updates the open-source Chromium browser for Android.
+######Installs/Updates the open-source Chromium browser
 ######Chromium builds do not auto-update. Simply Install Chromium again to Update. 
+######// It may be tremendously buggy.
 ######Requires min API 19/Android 4.4
 
-#about the Chromium browser
+#about
 ######You don't need getChromium to use the Chromium browser.
 ######Chromium APK courtesy of the Chromium team https://www.chromium.org/
-######Other Ways of Getting Chromium:https://www.chromium.org/getting-involved/download-chromium
+######Other Ways of Getting Chromium: https://www.chromium.org/getting-involved/download-chromium
   
 
 
 [![F-Droid](https://f-droid.org/wiki/images/0/06/F-Droid-button_get-it-on.png)](https://f-droid.org/repository/browse/?fdcategory=Internet&fdid=com.anddevw.getchromium&fdpage=3)
 
-# [DOWNLOAD LATEST APK](https://github.com/andDevW/getChromium/releases/download/v2.1/app-release.apk)
+# [DIRECT DOWNLOAD APK](https://github.com/andDevW/getChromium/releases/download/v2.1/app-release.apk)
 ## [RELEASES](https://github.com/andDevW/getChromium/releases/)
 
 
@@ -24,11 +25,8 @@ ___
 
 
 ***
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222112.png" width="320" height="569" /> 
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222152.png" width="320" height="569" /> 
-***
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222321.png" width="320" height="569" /> 
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222451.png" width="320" height="569" />
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-10-21-165447.png" width="320" height="569" /> 
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-10-21-165657.png" width="320" height="569" /> 
 ***
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222516.png" width="320" height="569" /> 
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222546.png" width="320" height="569" /> 
@@ -40,7 +38,7 @@ ___
 
 ######INTERNET (Full network access): to download Chromium builds
 ######ACCESS_NETWORK_STATE (View network connections): to download over WiFi if available
-######WAKE_LOCK (Prevent device from sleeping): to enable reliable downloads
+
  
 
 ###support
