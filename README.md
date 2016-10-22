@@ -3,7 +3,7 @@
 
 
 ___
-######Minimalist Android app that Installs/Updates the open-source Chromium browser
+######Installs/Updates the open-source Chromium browser
 ######Installs fresh Chromium every time
 ######Chromium builds do not auto-update. Simply Install Chromium again to Update. 
 ######Requires min API 19/Android 4.4
