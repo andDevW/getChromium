@@ -41,11 +41,11 @@ import static com.anddevw.getchromium.R.id.fabA;
 public class GetChromium extends AppCompatActivity {
     private static final String PREFS_NAME = "prefs";
     private static final String PREF_DARK_THEME = "dark_theme";
-    public static String WIDGET_BUTTON = "com.anddevw.getchromium.WIDGET_BUTTON";
+    public static final String WIDGET_BUTTON = "com.anddevw.getchromium.WIDGET_BUTTON";
     protected ProgressDialog mProgressDialog;
-    private String urlL = "https://commondatastorage.googleapis.com/" +
+    private final String urlL = "https://commondatastorage.googleapis.com/" +
             "chromium-browser-snapshots/Android/LAST_CHANGE";
-    private String urlA = "https://www.chromium.org/getting-involved";
+    private final String urlA = "https://www.chromium.org/getting-involved";
     public static final String TAG = "getChromium";
     RequestQueue mRequestQueue;
 
@@ -245,7 +245,7 @@ public class GetChromium extends AppCompatActivity {
             DownloadChromiumApk.download(url, zipFile, zipDir);
             unzipFile( zipFile, outputDir );
         } finally {
-
+            zipFile.delete();
          instChromium();
         }
     }

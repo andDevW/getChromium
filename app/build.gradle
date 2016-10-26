@@ -2,15 +2,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
 
     defaultConfig {
         applicationId "com.anddevw.getchromium"
         minSdkVersion 19
-        targetSdkVersion 23
-        versionCode 20161021
-        versionName "3.0"
+        targetSdkVersion 25
+        versionCode 20161025
+        versionName "3.1"
     }
     buildTypes {
         release {
@@ -34,9 +34,9 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.2.0'
-    compile 'com.android.support:design:23.3.0'
-    compile 'com.android.support:support-v4:23.3.0'
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.android.support:design:25.0.0'
+    compile 'com.android.support:support-v4:25.0.0'
     // ONLY FOR f-droid VARIANT!!
     compile 'com.mcxiaoke.volley:library:1.0.19'
 }
