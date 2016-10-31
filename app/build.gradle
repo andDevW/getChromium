@@ -38,5 +38,5 @@ dependencies {
     compile 'com.android.support:design:25.0.0'
     compile 'com.android.support:support-v4:25.0.0'
     // ONLY FOR f-droid VARIANT!!
-    compile 'com.mcxiaoke.volley:library:1.0.19'
+   //compile 'com.mcxiaoke.volley:library:1.0.19'
 }
