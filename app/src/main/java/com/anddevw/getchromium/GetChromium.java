@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -72,6 +73,9 @@ public class GetChromium extends AppCompatActivity {
             public void onClick(View view) {
                 // Vibrate
                 // signalInstall.vibrate(300);
+                //Enable experimental features in Chromium:
+            Snackbar.make(view, "ENABLE EXPERIMENTAL FEATURES\nIn Chromium, navigate to chrome://flags", 6000)
+                        .setAction("Action", null).show();
                 runSetup();
                 downloadLatest();
                 return;
