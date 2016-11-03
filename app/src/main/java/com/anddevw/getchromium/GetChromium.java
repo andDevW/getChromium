@@ -13,6 +13,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -262,6 +263,7 @@ public class GetChromium extends AppCompatActivity {
                 "application/vnd.android.package-archive");
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+        deleteAPk();
     }
 
     protected void unzipFile( File zipFile, File destination ) {
@@ -270,6 +272,17 @@ public class GetChromium extends AppCompatActivity {
         decomp.unzip();
         dismissProgress();
     }
+
+    private void deleteAPk() {
+        try {
+            new File(String.valueOf(GetStorage.getDir
+                    (this, "getChromium/chrome-android/apks/ContentShell.apk"))).delete();
+        }
+        catch (Exception ex) {
+            Log.e("tag", ex.getMessage());
+        }
+    }
+
 
     // Link to Chromium Project 'Getting Involved'.
     public void openBlogA() {
