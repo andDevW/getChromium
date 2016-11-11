@@ -17,7 +17,7 @@ ___
 
 [![F-Droid](https://f-droid.org/wiki/images/0/06/F-Droid-button_get-it-on.png)](https://f-droid.org/repository/browse/?fdcategory=Internet&fdid=com.anddevw.getchromium&fdpage=3)
 
-# [DIRECT DOWNLOAD APK](https://github.com/andDevW/getChromium/releases/download/v3.2/app-release.apk)
+# [DIRECT DOWNLOAD CURRENT APK](https://github.com/andDevW/getChromium/releases/download/v3.2/app-release.apk)
 ## [RELEASES](https://github.com/andDevW/getChromium/releases/)
 
 
