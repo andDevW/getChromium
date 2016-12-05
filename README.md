@@ -2,17 +2,15 @@
 
 
 ___
-######Installs/Updates the open-source Chromium browser
-######Chromium builds do not auto-update. Simply Install Chromium again to Update. 
-######Chromium may be tremendously buggy.
-######Requires min API 19/Android 4.4
+###Installs/Updates the open-source Chromium browser
+###Chromium builds do not auto-update. Simply Install Chromium again to Update. 
+###Chromium may be tremendously buggy.
+###Requires min API 19/Android 4.4
 
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/google-play-badge.png" />
+<a href='https://play.google.com/store/apps/details?id=com.anddevw.getchromium&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
 
-#about
-######You don't need getChromium to use the Chromium browser.
-######Chromium APK courtesy of the Chromium team https://www.chromium.org/
-######Other Ways of Getting Chromium: https://www.chromium.org/getting-involved/download-chromium
+###You don't need getChromium to use the Chromium browser.
+###Chromium APK courtesy of the Chromium team https://www.chromium.org/
   
 
 
