@@ -1,5 +1,4 @@
-<img src="https://github.com/andDevW/getChromium/blob/master/app/src/main/res/mipmap-xhdpi/ic_launcher.png" />
-#getChromium
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/getChromium_FeatureGraphic_1024x500.png" />
 
 
 ___
@@ -7,6 +6,8 @@ ___
 ######Chromium builds do not auto-update. Simply Install Chromium again to Update. 
 ######Chromium may be tremendously buggy.
 ######Requires min API 19/Android 4.4
+
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/google-play-badge.png" />
 
 #about
 ######You don't need getChromium to use the Chromium browser.
