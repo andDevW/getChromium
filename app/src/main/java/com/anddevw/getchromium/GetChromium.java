@@ -220,7 +220,7 @@ public class GetChromium extends AppCompatActivity {
     protected void showProgress() {
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        mProgressDialog.setTitle(getString(R.string.title_get_cr));
+        mProgressDialog.setTitle(getString(R.string.progress_title));
         mProgressDialog.setMessage(getString(R.string.progress_detail));
         mProgressDialog.setIndeterminate(true);
         mProgressDialog.setCancelable(false);

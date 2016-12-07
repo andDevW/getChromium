@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="progress_title">please wait.</string>
+    <string name="progress_detail">downloading Chromium APK...</string>
     <string name="build_revision_button">Build Revision :</string>
     <string name="downloading">downloading...</string>
     <string name="inprogress">in progress</string>

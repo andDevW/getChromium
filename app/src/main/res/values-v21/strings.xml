@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="build_revision">Build Revision:</string>
-    <string name="progress_title">downloading…</string>
-    <string name="progress_detail">downloading Chromium…</string>
+    <string name="progress_title">please wait.</string>
+    <string name="progress_detail">downloading Chromium APK...</string>
     <string name="action_sync">Sync</string>
     <string name="download_not_found">Download not found</string>
     <string name="download_failed">Download failed</string>
@@ -31,7 +31,7 @@
     <string name="last_known_good_revision_title">Last Known Good Revision</string>
     <string name="latest_title">Latest</string>
     <string name="get_cr">getChromium</string>
-    <string name="title_get_cr">getChromium</string>
+    <string name="title_get_cr">downloading</string>
     <string name="build_revision_button">Build Revision :</string>
     <string name="downloading">downloading...</string>
     <string name="inprogress">in progress</string>
