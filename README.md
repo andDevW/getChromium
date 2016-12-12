@@ -20,7 +20,7 @@ ___
 
 ***
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-10-21-165447.png" width="320" height="569" /> 
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-10-31-124310.png" width="320" height="569" /> 
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/v3.3_download_dialog.png" width="320" height="569" /> 
 ***
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222516.png" width="320" height="569" /> 
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222546.png" width="320" height="569" /> 
