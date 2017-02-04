@@ -60,7 +60,7 @@ getChromium uses:
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
 [GNU General Public License version 3](http://www.gnu.org/licenses/gpl.txt)
 
-Copyright (c) 2015-2016 Andrew Wright (andDevW)
+Copyright (c) 2015-2017 Andrew Wright (andDevW)
 
 All rights reserved
 
