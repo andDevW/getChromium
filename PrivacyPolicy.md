@@ -10,7 +10,7 @@ getChromium does not report data to anyone, ever.
 
 getChromium does nothing unless you tell it to and then getChromium sits dormant until you use it next.  
 getChromium is a minimalist Android app designed to conserve battery as well as bandwith.  
-getChromium is built on free and open source GNU/Linux.  
+
 getChromium is designed to comply with the Unix philosophy:  
 Write programs that do one thing and do it well.  
 getChromium installs Chromium for Android, and getChromium does this well.  
@@ -34,13 +34,12 @@ Click on the links below to jump to each section:
 3.  [Children’s Privacy](#3-childrens-privacy)
 4.  [How to Contact Us](#4-how-to-contact-us)
 
-## _We are 100% transparent in our data collection and use practices.   We dislike data collection and do not collect any data, ever._#
+## _We are 100% transparent in our data collection and use practices.   We do not collect any data, ever._#
 
 ### 1. HOW WE COLLECT AND USE INFORMATION
 
 getChromium collects NO information.  
 None.  
-**getChromium urges everyone to only use free and open source apps that respect the user's privacy.**
 
 ### 2. HOW WE SHARE YOUR INFORMATION
 
