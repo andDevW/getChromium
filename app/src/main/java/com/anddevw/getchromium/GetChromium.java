@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -40,7 +41,13 @@ import java.io.IOException;
 
 import static com.anddevw.getchromium.R.id.fabA;
 
+
+// Created by andDevW(Andrew Wright) ©2015-2017.
+// andrew@andDevW.com
+
+
 public class GetChromium extends AppCompatActivity {
+    private ShareActionProvider mShareActionProvider;
     private static final String PREFS_NAME = "prefs";
     private static final String PREF_DARK_THEME = "dark_theme";
     public static final String WIDGET_BUTTON = "com.anddevw.getchromium.WIDGET_BUTTON";
@@ -65,15 +72,13 @@ public class GetChromium extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        // Vibrate
-        // final Vibrator signalInstall = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE) ;
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(fabA);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Vibrate
-                // signalInstall.vibrate(300);
+
                 //Enable experimental features in Chromium:
             Snackbar.make(view, "ENABLE EXPERIMENTAL FEATURES\nIn Chromium, navigate to chrome://flags", 6000)
                         .setAction("Action", null).show();
@@ -298,22 +303,6 @@ public class GetChromium extends AppCompatActivity {
         super.onStop();
         if (mRequestQueue != null) {
             mRequestQueue.cancelAll(TAG);
-
-//    WORKING, NEEDS TO BE BETTER
-//
-//    private void checkPermissions() throws Settings.SettingNotFoundException {
-//        boolean isNonPlayAppAllowed = Settings.Secure.getInt(getContentResolver(),
-//        Settings.Secure.INSTALL_NON_MARKET_APPS) == 1;
-//        if (!isNonPlayAppAllowed) {
-//            launchSecuritySettings();
-//            runSetup();
-//            downloadLatest();
-//        } else {
-//            runSetup();
-//            downloadLatest();
-//        }
-//    }
-
         }
     }
 }

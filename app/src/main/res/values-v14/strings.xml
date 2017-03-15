@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- w14/API level 14/Android 4.0 -->
     <string name="progress_title">please wait.</string>
     <string name="progress_detail">downloading Chromium APK...</string>
     <string name="build_revision_button">Build Revision :</string>

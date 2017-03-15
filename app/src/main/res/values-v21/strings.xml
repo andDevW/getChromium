@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- w21/API level 21/Android 5.0 -->
     <string name="build_revision">Build Revision:</string>
     <string name="progress_title">please wait.</string>
     <string name="progress_detail">downloading Chromium APK...</string>
@@ -38,8 +39,6 @@
     <string name="dialog_check_settings">check settings</string>
     <string name="check">View Settings</string>
     <string name="skip">Skip</string>
-    <string name="unknown_apps_dlg_title">Install blocked</string>
-    <string name="unknown_apps_dlg_text">For security, your phone is set\\nto  block installation of apps obtained \\nfrom unknown sources.</string>
     <string name="cancel">CANCEL</string>
     <string name="settings">SETTINGS</string>
     <string name="ok">OK</string>
