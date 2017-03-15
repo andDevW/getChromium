@@ -1,16 +1,26 @@
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/getChromium_FeatureGraphic_1024x500.png" />
 
+##This app installs the latest build of Chromium for Android.
+##// Chromium may be tremendously buggy.
+&nbsp;
 
+##Chromium builds do not auto-update. 
+##Simply Install Chromium again to Update.
+&nbsp;
+
+##New Chromium builds are released constantly.
+##Update Chromium frequently for the latest experimental features. 
+&nbsp;
+
+##Requires Android 4.4+
+##Chromium APK courtesy of the Chromium team https://www.chromium.org/
+&nbsp;
 ___
-###Installs/Updates the open-source Chromium browser
-###Chromium builds do not auto-update. Simply Install Chromium again to Update. 
-###Chromium may be tremendously buggy.
-###Requires min API 19/Android 4.4
+
 
 <a href='https://play.google.com/store/apps/details?id=com.anddevw.getchromium&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
 
-###You don't need getChromium to use the Chromium browser.
-###Chromium APK courtesy of the Chromium team https://www.chromium.org/
+
   
 
 
@@ -21,7 +31,7 @@ ___
 
 ***
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-10-21-165447.png" width="320" height="569" /> 
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-10-31-124310.png" width="320" height="569" /> 
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/v3.3_download_dialog.png" width="320" height="569" /> 
 ***
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222516.png" width="320" height="569" /> 
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222546.png" width="320" height="569" /> 
@@ -50,7 +60,7 @@ getChromium uses:
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
 [GNU General Public License version 3](http://www.gnu.org/licenses/gpl.txt)
 
-Copyright (c) 2015-2016 Andrew Wright (andDevW)
+Copyright (c) 2015-2017 Andrew Wright (andDevW)
 
 All rights reserved
 
