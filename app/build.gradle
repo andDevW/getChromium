@@ -7,10 +7,10 @@ android {
 
     defaultConfig {
         applicationId "com.anddevw.getchromium"
-        minSdkVersion 19
-        targetSdkVersion 23
-        versionCode 20170314
-        versionName "3.5"
+        minSdkVersion 24
+        targetSdkVersion 25
+        versionCode 20170317
+        versionName "4.0"
     }
     buildTypes {
         release {
