@@ -11,6 +11,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
@@ -40,6 +41,10 @@ import java.io.File;
 import java.io.IOException;
 
 import static com.anddevw.getchromium.R.id.fabA;
+
+//import com.getkeepsafe.taptargetview.TapTarget;
+//import com.getkeepsafe.taptargetview.TapTargetSequence;
+//import com.getkeepsafe.taptargetview.TapTargetView;
 
 
 // Created by andDevW(Andrew Wright) ©2015-2017.
@@ -260,16 +265,40 @@ public class GetChromium extends AppCompatActivity {
         }
     }
 
-    private void instChromium() {
+//  >= API_24
+    private void instChromium () {
+// Build the "install chromium" intent
+//grant permision for app with package "packegeName", eg. before starting other app via intent
+
+//        File toInstall = new File(appDirectory, appName + ".apk")
+        File apkPath = new File(GetChromium.this.getFilesDir(), "getChromium/chrome-android/apks");
+        File apkFile = new File(apkPath, "ChromePublic" + ".apk");
+        Uri apkUri = FileProvider.getUriForFile(this, "com.anddevw.getchromium.fileprovider", apkFile);
+
+
         Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-        intent.setDataAndType(Uri.fromFile(
-                new File(String.valueOf(GetStorage.getDir
-                        (this, "getChromium/chrome-android/apks/ChromePublic.apk")))),
-                "application/vnd.android.package-archive");
+        intent.setData(apkUri);
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        deleteAPk();
+
+        if (intent.resolveActivity(getPackageManager()) == null) {
+        } else {
+            this.startActivity(intent);
+            deleteAPK();
+        }
     }
+
+// <API_24
+//    private void instChromium() {
+//        Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
+//        intent.setDataAndType(Uri.fromFile(
+//                new File(String.valueOf(GetStorage.getDir
+//                        (this, "getChromium/chrome-android/apks/ChromePublic.apk")))),
+//                "application/vnd.android.package-archive");
+//        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        startActivity(intent);
+//        deleteAPk();
+//    }
 
     protected void unzipFile( File zipFile, File destination ) {
         DecompressZip decomp = new DecompressZip( zipFile.getPath(),
@@ -278,7 +307,7 @@ public class GetChromium extends AppCompatActivity {
         dismissProgress();
     }
 
-    private void deleteAPk() {
+    private void deleteAPK() {
         try {
             new File(String.valueOf(GetStorage.getDir
                     (this, "getChromium/chrome-android/apks/ContentShell.apk"))).delete();
