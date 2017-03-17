@@ -15,6 +15,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -47,7 +50,10 @@ import static com.anddevw.getchromium.R.id.fabA;
 
 
 public class GetChromium extends AppCompatActivity {
+
     private ShareActionProvider mShareActionProvider;
+
+
     private static final String PREFS_NAME = "prefs";
     private static final String PREF_DARK_THEME = "dark_theme";
     public static final String WIDGET_BUTTON = "com.anddevw.getchromium.WIDGET_BUTTON";
@@ -304,5 +310,6 @@ public class GetChromium extends AppCompatActivity {
         if (mRequestQueue != null) {
             mRequestQueue.cancelAll(TAG);
         }
+
     }
 }

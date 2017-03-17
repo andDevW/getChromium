@@ -45,4 +45,6 @@
     <string name="ok">OK</string>
     <string name="dialog_title">Install blocked</string>
     <string name="progress_detail2">Unzipping...</string>
+    <string name="share">Share</string>
+    <string name="about">About</string>
 </resources>
