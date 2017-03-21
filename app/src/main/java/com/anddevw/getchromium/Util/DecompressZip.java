@@ -3,6 +3,8 @@ package com.anddevw.getchromium.Util;
 
 import android.util.Log;
 
+import com.anddevw.getchromium.IDownloadProgress;
+
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,7 +28,7 @@ public class DecompressZip {
         buffer = new byte[BUFFER_SIZE];
         dirChecker("");
     }
-    public void unzip() {
+    public void unzip(IDownloadProgress downloadProgress) {
         FileInputStream finstream = null;
         ZipInputStream zinstream = null;
         OutputStream foutstream = null;
@@ -46,7 +48,9 @@ public class DecompressZip {
                 } else {
                     tmp = File.createTempFile( "decomp", ".tmp", outputDir );
                     foutstream = new BufferedOutputStream(new FileOutputStream(tmp));
-                    DownloadChromiumApk.copyStream(zinstream, foutstream, buffer, BUFFER_SIZE);
+                    DownloadChromiumApk.copyStream(zinstream, foutstream, buffer, BUFFER_SIZE,
+                            (int)zentry.getSize(), downloadProgress);
+
                     zinstream.closeEntry();
                     foutstream.close();
                     foutstream = null;

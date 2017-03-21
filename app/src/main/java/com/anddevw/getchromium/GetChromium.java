@@ -199,7 +199,8 @@ public class GetChromium extends AppCompatActivity {
         mRequestQueue.add(stringRequest);
     }
 
-    private class DownloadTask extends AsyncTask<String, Void, Exception> {
+    private class DownloadTask extends AsyncTask<String, Integer, Exception> {
+
         @Override
         protected void onPreExecute() {
             showProgress();
@@ -209,11 +210,21 @@ public class GetChromium extends AppCompatActivity {
         protected Exception doInBackground(String... params) {
             String url = params[0];
             try {
-                downloadAllAssets(url);
+                downloadAllAssets(url, new IDownloadProgress() {
+                    @Override
+                    public void onProgress(int done, int total) {
+                        publishProgress(done, total);
+                    }
+                });
             } catch (Exception e) {
                 return e;
             }
             return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            updateProgress(values[0], values[1]);
         }
 
         @Override
@@ -233,12 +244,17 @@ public class GetChromium extends AppCompatActivity {
         mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         mProgressDialog.setTitle(getString(R.string.progress_title));
         mProgressDialog.setMessage(getString(R.string.progress_detail));
-        mProgressDialog.setIndeterminate(true);
+        mProgressDialog.setIndeterminate(false);
         mProgressDialog.setCancelable(false);
         mProgressDialog.setProgress(0);
         mProgressDialog.setProgressNumberFormat(null);
         mProgressDialog.setProgressPercentFormat(null);
         mProgressDialog.show();
+    }
+
+    protected void updateProgress(int done, int total) {
+        mProgressDialog.setMax(total);
+        mProgressDialog.setProgress(done);
     }
 
     protected void dismissProgress() {
@@ -253,13 +269,13 @@ public class GetChromium extends AppCompatActivity {
         mProgressDialog = null;
     }
 
-    private void downloadAllAssets( String url ) {
+    private void downloadAllAssets( String url, IDownloadProgress downloadProgress ) {
         File zipDir =  GetStorage.getDir(this, "tmp");
         File zipFile = new File( zipDir.getPath() + "/temp.zip" );
         File outputDir = GetStorage.getDir(this, "getChromium");
         try {
-            DownloadChromiumApk.download(url, zipFile, zipDir);
-            unzipFile( zipFile, outputDir );
+            DownloadChromiumApk.download(url, zipFile, zipDir, downloadProgress);
+            unzipFile( zipFile, outputDir, downloadProgress );
         } finally {
             zipFile.delete();
          instChromium();
@@ -277,10 +293,10 @@ public class GetChromium extends AppCompatActivity {
         deleteAPk();
     }
 
-    protected void unzipFile( File zipFile, File destination ) {
+    protected void unzipFile( File zipFile, File destination, IDownloadProgress downloadProgress ) {
         DecompressZip decomp = new DecompressZip( zipFile.getPath(),
                 destination.getPath() + File.separator );
-        decomp.unzip();
+        decomp.unzip(downloadProgress);
         dismissProgress();
     }
 
