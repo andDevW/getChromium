@@ -20,7 +20,7 @@ ___
 
 <a href='https://play.google.com/store/apps/details?id=com.anddevw.getchromium&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
 
-
+<a href="https://f-droid.org/repository/browse/?fdid=com.anddevw.getchromium" target="_blank"><img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid"/></a>
   
 
 
@@ -30,8 +30,8 @@ ___
 
 
 ***
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-10-21-165447.png" width="320" height="569" /> 
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/v3.3_download_dialog.png" width="320" height="569" /> 
+<img src="https://github.com/andDevW/getChromium/blob/res/device-2017-03-14-232548.png" width="320" height="569" /> 
+<img src="https://github.com/andDevW/getChromium/blob/res/device-2017-03-17-164841.png" width="320" height="569" /> 
 ***
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222516.png" width="320" height="569" /> 
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222546.png" width="320" height="569" /> 
