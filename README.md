@@ -1,7 +1,6 @@
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/banner_001.png" />
 
    
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/description_banner_002.png" />
 
 ___
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/description_banner_004.png" />
