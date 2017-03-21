@@ -1,9 +1,10 @@
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/banner_001.png" />
+
    
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/description_banner_002.png" />
 
 ___
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/description_banner_003.png" />
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/description_banner_004.png" />
 
 <a href='https://play.google.com/store/apps/details?id=com.anddevw.getchromium&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a><a href="https://f-droid.org/repository/browse/?fdid=com.anddevw.getchromium" target="_blank"><img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid"/></a>
 
@@ -25,7 +26,6 @@ getChromium uses:
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
 [GNU General Public License version 3](http://www.gnu.org/licenses/gpl.txt)
 
-Copyright (c) 2015-2017 Andrew Wright (andDevW)
 
 All rights reserved
 
@@ -40,3 +40,5 @@ You should have received a copy of the GNU General Public License along with get
 ### Trademarks
 
 *Android is a trademark of Google Inc. Google Play is a trademark of Google Inc*
+
+*Copyright (c) 2015-2017 Andrew Wright (andDevW)*
