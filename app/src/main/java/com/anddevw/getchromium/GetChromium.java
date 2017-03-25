@@ -47,7 +47,6 @@ import static com.anddevw.getchromium.R.id.fabA;
 
 public class GetChromium extends AppCompatActivity {
 
-    //private ShareActionProvider mShareActionProvider;
     private final String urlA = "https://www.chromium.org/getting-involved";
     private final String urlL = "https://commondatastorage.googleapis.com/chromium-browser-snapshots/Android/LAST_CHANGE";
 
@@ -128,7 +127,7 @@ public class GetChromium extends AppCompatActivity {
     }
 
     public void runSetup() {
-        // Keep device awake without adding special permissions.
+        // Keep device awake throughout download without requiring special permissions.
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         isNetworkAvailable();
