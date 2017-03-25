@@ -12,12 +12,8 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -51,41 +47,40 @@ import static com.anddevw.getchromium.R.id.fabA;
 
 public class GetChromium extends AppCompatActivity {
 
-    private ShareActionProvider mShareActionProvider;
-
-
-    private static final String PREFS_NAME = "prefs";
-    private static final String PREF_DARK_THEME = "dark_theme";
-    public static final String WIDGET_BUTTON = "com.anddevw.getchromium.WIDGET_BUTTON";
-    protected ProgressDialog mProgressDialog;
-    private final String urlL = "https://commondatastorage.googleapis.com/" +
-            "chromium-browser-snapshots/Android/LAST_CHANGE";
+    //private ShareActionProvider mShareActionProvider;
     private final String urlA = "https://www.chromium.org/getting-involved";
+    private final String urlL = "https://commondatastorage.googleapis.com/chromium-browser-snapshots/Android/LAST_CHANGE";
+
+    private static final String PREF_DARK_THEME = "dark_theme";
+    private static final String PREFS_NAME = "prefs";
+
+    protected ProgressDialog mProgressDialog;
+
     public static final String TAG = "getChromium";
+    public static final String WIDGET_BUTTON = "com.anddevw.getchromium.WIDGET_BUTTON";
+
     RequestQueue mRequestQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
 
-        // Set dark theme as default
+        // Set dark theme as default.
         boolean useDarkTheme = preferences.getBoolean(PREF_DARK_THEME, true);
         if (useDarkTheme) {
             setTheme(R.style.AppTheme_Dark_NoActionBar);
         }
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(fabA);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                //Enable experimental features in Chromium:
+            // Spread the word about 'chrome://flags'
             Snackbar.make(view, "ENABLE EXPERIMENTAL FEATURES\nIn Chromium, navigate to chrome://flags", 6000)
                         .setAction("Action", null).show();
                 runSetup();
@@ -122,24 +117,25 @@ public class GetChromium extends AppCompatActivity {
         });
     }
 
+    // The toggle switch changes the app theme from default(dark) to non-default(light).
     private void toggleTheme(boolean darkTheme) {
         SharedPreferences.Editor editor = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
         editor.putBoolean(PREF_DARK_THEME, darkTheme);
         editor.apply();
-
         Intent intent = getIntent();
         finish();
-
         startActivity(intent);
     }
 
     public void runSetup() {
-        // Keep device awake
+        // Keep device awake without adding special permissions.
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
         isNetworkAvailable();
         isOnline();
     }
 
+    // Check to see if we have an Internet connection.
     private Boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -147,10 +143,11 @@ public class GetChromium extends AppCompatActivity {
         return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
     }
 
+    // Check for any connection.
     public boolean isOnline() {
         Runtime runtime = Runtime.getRuntime();
         try {
-            Process ipProcess = runtime.exec("/system/bin/ping -c 1 8.8.8.8");
+            Process ipProcess = runtime.exec("/system/bin/ping -c 1 8.8.8.8"); // Ping Google Public DNS.
             int exitValue = ipProcess.waitFor();
             return (exitValue == 0);
         } catch (IOException e) {
@@ -161,30 +158,44 @@ public class GetChromium extends AppCompatActivity {
         return false;
     }
 
+    // Chromium won't install unless 'Unknown sources' are allowed in the system-level settings.
     private void launchSecuritySettings() {
+
+            // Display Settings > Security > 'Unknown sources'
             Intent launchSettingsIntent = new Intent(android.provider.Settings.ACTION_SECURITY_SETTINGS);
             launchSettingsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(launchSettingsIntent);
           //finish();
         }
 
+
     public void downloadLatest() {
-        Cache cache = new DiskBasedCache(getCacheDir(), 1024 * 1024);
+
+        // Instantiate the cache
+        Cache cache = new DiskBasedCache(getCacheDir(), 1024 * 1024); // 1MB cap
+
+        // Set up the network to use HttpURLConnection as the HTTP client.
         com.android.volley.Network network = new BasicNetwork(new HurlStack());
+
+        // Instantiate the RequestQueue with the cache and network.
         mRequestQueue = new RequestQueue(cache, network);
         mRequestQueue.start();
 
+        // Request a string response from "https://commondatastorage.googleapis.com/chromium-browser-snapshots/Android/LAST_CHANGE"
+        // The response provides the current ID of Chromium's latest build
         final StringRequest stringRequest = new StringRequest(Request.Method.GET, urlL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+
+                        // Build new String for the current APK download URL
                         Uri.Builder builder = new Uri.Builder();
                         builder.scheme("https")
                                 .authority("commondatastorage.googleapis.com")
                                 .appendPath("chromium-browser-snapshots")
                                 .appendPath("Android")
-                                .appendPath(response)
-                                .appendPath("chrome-android.zip");
+                                .appendPath(response) // Build revision number
+                                .appendPath("chrome-android.zip"); // Name of the file that will contain the APKs.
                         String apkUrl = builder.build().toString();
                         new DownloadTask().execute(apkUrl);
                     }
@@ -196,6 +207,7 @@ public class GetChromium extends AppCompatActivity {
                     }
                 });
 
+        // Add the request to the RequestQueue.
         mRequestQueue.add(stringRequest);
     }
 
@@ -267,6 +279,8 @@ public class GetChromium extends AppCompatActivity {
     }
 
     private void instChromium() {
+
+        // Install package ChromePublic.apk(Chromium for Android).
         Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
         intent.setDataAndType(Uri.fromFile(
                 new File(String.valueOf(GetStorage.getDir
@@ -274,6 +288,8 @@ public class GetChromium extends AppCompatActivity {
                 "application/vnd.android.package-archive");
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+
+        // Call to delete 'ContentShell.apk'
         deleteAPk();
     }
 
@@ -284,6 +300,8 @@ public class GetChromium extends AppCompatActivity {
         dismissProgress();
     }
 
+    // 'chrome-android.zip' contains two different packages: 'ChromePublic.apk' and 'ContentShell.apk'.
+    // We never delete 'ChromePublic.apk' because we don't want to download and then unzip everything again.
     private void deleteAPk() {
         try {
             new File(String.valueOf(GetStorage.getDir
@@ -295,7 +313,7 @@ public class GetChromium extends AppCompatActivity {
     }
 
 
-    // Link to Chromium Project 'Getting Involved'.
+    // Link to Chromium Project page 'Getting Involved'.
     public void openBlogA() {
         Uri webpage = Uri.parse(urlA);
         Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
@@ -307,6 +325,8 @@ public class GetChromium extends AppCompatActivity {
     @Override
     protected void onStop () {
         super.onStop();
+
+        // Cancel all requests(Chromium's latest build is updated CONSTANTLY).
         if (mRequestQueue != null) {
             mRequestQueue.cancelAll(TAG);
         }
