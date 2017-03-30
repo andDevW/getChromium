@@ -1,4 +1,4 @@
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/banner_001.png" />
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/install_instructions_banner_001.png" />
 
    
 
