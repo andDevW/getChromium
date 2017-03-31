@@ -24,6 +24,7 @@ width="320" height="569" />
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222707.png" 
 width="320" height="569" /> 
 ***  
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/where_to_get_getChromium.png"/>  
 <a href="https://github.com/andDevW/getChromium/raw/res/app-release.apk" target="_blank"><img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/getgetChromium_APK.png" alt="Get it on F-Droid"/></a>
 
 <a href="https://f-droid.org/repository/browse/?fdid=com.anddevw.getchromium" target="_blank"><img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid"/></a>
