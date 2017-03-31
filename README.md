@@ -6,8 +6,13 @@
 <br>  
 <br>
 
+***
+<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/screenshots.png" />
 
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/description_banner_003.png" />
+<img src="https://github.com/andDevW/getChromium/blob/res/device-2017-03-14-232548.png" width="320" height="569" /> 
+<img src="https://github.com/andDevW/getChromium/blob/res/device-2017-03-17-164841.png" width="320" height="569" /> 
+***
+
   
 <a href="https://github.com/andDevW/getChromium/raw/res/app-release.apk" target="_blank"><img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/getgetChromium_APK.png" alt="Get it on F-Droid"/></a>
 
