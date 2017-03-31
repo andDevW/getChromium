@@ -8,6 +8,7 @@
 
 ***  
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/screenshots.png" />
+<br>  
 
 <img src="https://github.com/andDevW/getChromium/blob/res/device-2017-03-14-232548.png" 
 width="320" height="569" /> 
