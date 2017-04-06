@@ -35,21 +35,17 @@ public class DownloadChromiumApk  {
         }
     }
 
-    public static void copyStream( InputStream is, OutputStream os ) throws IOException {
+    private static void copyStream(InputStream is, OutputStream os) throws IOException {
         byte[] buffer = new byte[ BUFFER_SIZE ];
         copyStream( is, os, buffer, BUFFER_SIZE );
     }
 
     public static void copyStream( InputStream is, OutputStream os,
                                    byte[] buffer, int bufferSize ) throws IOException {
-        try {
-            for (;;) {
-                int count = is.read( buffer, 0, bufferSize );
-                if ( count == -1 ) { break; }
-                os.write( buffer, 0, count );
-            }
-        } catch ( IOException e ) {
-            throw e;
+        for (;;) {
+            int count = is.read( buffer, 0, bufferSize );
+            if ( count == -1 ) { break; }
+            os.write( buffer, 0, count );
         }
     }
 }

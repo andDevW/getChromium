@@ -20,10 +20,10 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-                <intent-filter>
+                </intent-filter>
+            <intent-filter>
                     <action android:name="android.intent.action.ACTION_SECURITY_SETTINGS" />
                     <category android:name="android.intent.category.DEFAULT" />
-                </intent-filter>
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

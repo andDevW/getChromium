@@ -47,18 +47,15 @@ import static com.anddevw.getchromium.R.id.fabA;
 
 public class GetChromium extends AppCompatActivity {
 
-    private final String urlA = "https://www.chromium.org/getting-involved";
-    private final String urlL = "https://commondatastorage.googleapis.com/chromium-browser-snapshots/Android/LAST_CHANGE";
-
     private static final String PREF_DARK_THEME = "dark_theme";
     private static final String PREFS_NAME = "prefs";
 
-    protected ProgressDialog mProgressDialog;
+    private ProgressDialog mProgressDialog;
 
-    public static final String TAG = "getChromium";
+    private static final String TAG = "getChromium";
     public static final String WIDGET_BUTTON = "com.anddevw.getchromium.WIDGET_BUTTON";
 
-    RequestQueue mRequestQueue;
+    private RequestQueue mRequestQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +81,6 @@ public class GetChromium extends AppCompatActivity {
                         .setAction("Action", null).show();
                 runSetup();
                 downloadLatest();
-                return;
             }
         });
 
@@ -93,7 +89,6 @@ public class GetChromium extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 launchSecuritySettings();
-                return;
             }
         });
 
@@ -116,7 +111,7 @@ public class GetChromium extends AppCompatActivity {
         });
     }
 
-    // The toggle switch changes the app theme from default(dark) to non-default(light).
+    // Changes the app theme from default(dark) to non-default(light).
     private void toggleTheme(boolean darkTheme) {
         SharedPreferences.Editor editor = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
         editor.putBoolean(PREF_DARK_THEME, darkTheme);
@@ -126,7 +121,7 @@ public class GetChromium extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void runSetup() {
+    private void runSetup() {
         // Keep device awake throughout download without requiring special permissions.
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
@@ -143,15 +138,13 @@ public class GetChromium extends AppCompatActivity {
     }
 
     // Check for any connection.
-    public boolean isOnline() {
+    private boolean isOnline() {
         Runtime runtime = Runtime.getRuntime();
         try {
             Process ipProcess = runtime.exec("/system/bin/ping -c 1 8.8.8.8"); // Ping Google Public DNS.
             int exitValue = ipProcess.waitFor();
             return (exitValue == 0);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
         return false;
@@ -168,7 +161,7 @@ public class GetChromium extends AppCompatActivity {
         }
 
 
-    public void downloadLatest() {
+    private void downloadLatest() {
 
         // Instantiate the cache
         Cache cache = new DiskBasedCache(getCacheDir(), 1024 * 1024); // 1MB cap
@@ -181,7 +174,8 @@ public class GetChromium extends AppCompatActivity {
         mRequestQueue.start();
 
         // Request a string response from "https://commondatastorage.googleapis.com/chromium-browser-snapshots/Android/LAST_CHANGE"
-        // The response provides the current ID of Chromium's latest build
+        // The response provides the current build number of Chromium's latest build
+        String urlL = "https://commondatastorage.googleapis.com/chromium-browser-snapshots/Android/LAST_CHANGE";
         final StringRequest stringRequest = new StringRequest(Request.Method.GET, urlL,
                 new Response.Listener<String>() {
                     @Override
@@ -239,7 +233,7 @@ public class GetChromium extends AppCompatActivity {
         }
     }
 
-    protected void showProgress() {
+    private void showProgress() {
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         mProgressDialog.setTitle(getString(R.string.progress_title));
@@ -252,7 +246,7 @@ public class GetChromium extends AppCompatActivity {
         mProgressDialog.show();
     }
 
-    protected void dismissProgress() {
+    private void dismissProgress() {
         if (mProgressDialog != null && mProgressDialog.
                 isShowing() && mProgressDialog.getWindow() != null) {
             try {
@@ -292,7 +286,7 @@ public class GetChromium extends AppCompatActivity {
         deleteAPk();
     }
 
-    protected void unzipFile( File zipFile, File destination ) {
+    private void unzipFile(File zipFile, File destination) {
         DecompressZip decomp = new DecompressZip( zipFile.getPath(),
                 destination.getPath() + File.separator );
         decomp.unzip();
@@ -313,7 +307,8 @@ public class GetChromium extends AppCompatActivity {
 
 
     // Link to Chromium Project page 'Getting Involved'.
-    public void openBlogA() {
+    private void openBlogA() {
+        String urlA = "https://www.chromium.org/getting-involved";
         Uri webpage = Uri.parse(urlA);
         Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
         if (intent.resolveActivity(getPackageManager()) != null) {

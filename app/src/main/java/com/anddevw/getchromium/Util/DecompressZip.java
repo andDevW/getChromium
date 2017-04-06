@@ -16,9 +16,9 @@ import java.util.zip.ZipInputStream;
 public class DecompressZip {
     private static final int BUFFER_SIZE=8192;
 
-    private String apkzip;
-    private String address;
-    private byte[] buffer;
+    private final String apkzip;
+    private final String address;
+    private final byte[] buffer;
 
     public DecompressZip(String zipFile, String location) {
         apkzip = zipFile;
