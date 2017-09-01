@@ -10,19 +10,19 @@
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/screenshots.png" />
 <br>  
 
-<img src="https://github.com/andDevW/getChromium/blob/res/device-2017-03-14-232548.png" 
+<img src="https://github.com/andDevW/getChromium/blob/master/device-home-2017-09-01-121010.png" 
 width="320" height="569" /> 
-<img src="https://github.com/andDevW/getChromium/blob/res/device-2017-03-17-164841.png" 
-width="320" height="569" /> 
-
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222516.png"
-width="320" height="569" /> 
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222546.png" 
+<img src="https://github.com/andDevW/getChromium/blob/master/device-download-2017-09-01-121035.png" 
 width="320" height="569" /> 
 
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222626.png" 
+<img src="https://github.com/andDevW/getChromium/blob/master/device-prompt-2017-09-01-123657.png"
 width="320" height="569" /> 
-<img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/device-2016-06-13-222707.png" 
+<img src="https://github.com/andDevW/getChromium/blob/master/device-installing-2017-09-01-123108.png" 
+width="320" height="569" /> 
+
+<img src="https://github.com/andDevW/getChromium/blob/master/device-installed-2017-09-01-123132.png" 
+width="320" height="569" /> 
+<img src="https://github.com/andDevW/getChromium/blob/master/device-welcome-2017-09-01-123812.png" 
 width="320" height="569" /> 
 ***  
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/where_to_get_getChromium.png"/>  
