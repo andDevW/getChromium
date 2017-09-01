@@ -2,13 +2,14 @@
     <string name="app_name">getChromium</string>
     <!-- Developer andDevW preferences -->
     <string name="pref_default_display_message">Bernie Sanders for President in 2020!</string>
-    <string name="pref_default_url_message">https://ourrevolution.com/</string>
+    <string name="pref_default_url_message">https://go.berniesanders.com/page/content/join-us/</string>
+
 
     <!-- Strings related to Layout -->
-    <string name="chromium_description_01">This installs the latest build of Chromium.</string>
+    <string name="chromium_description_01">Installs the latest build of Chromium.</string>
     <string name="chromium_description_02">Chromium builds don\'t auto-update.</string>
     <string name="chromium_description_03">To update just install Chromium again.</string>
-    <string name="chromium_description_04">// Chromium may be tremendously buggy.</string>
+    <string name="chromium_description_04">// Latest builds may be buggy.</string>
     <string name="chromium_description_05">APK courtesy of the Chromium team</string>
 
     <string name="chromium_description_06"></string>
@@ -30,8 +31,6 @@
     <string name="chromium_description_21">All of your bookmarks and settings will be exactly as they were in the previous version.</string>
 
 
-
-
     <string name="chromium_button_01"></string>
     <string name="chromium_button_02">get involved</string>
     <string name="chromium_button_03"></string>
@@ -40,5 +39,8 @@
     <string name="progress_detail">downloading Chromium APK...</string>
     <string name="share">Share</string>
     <string name="about">About</string>
+    <string name="dialog_set_theme">Set Theme</string>
+    <string name="action_settings">Settings</string>
+
 
 </resources>

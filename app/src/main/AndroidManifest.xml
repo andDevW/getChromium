@@ -3,7 +3,8 @@
     package="com.anddevw.getchromium">
 
     <!-- Optimize for all Chromebooks. -->
-    <uses-feature android:name="android.hardware.touchscreen"
+    <uses-feature
+        android:name="android.hardware.touchscreen"
         android:required="false" />
     <!-- Internet Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -20,39 +21,56 @@
             android:name=".GetChromium"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.Dark.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
+            </intent-filter>
             <intent-filter>
-                    <action android:name="android.intent.action.ACTION_SECURITY_SETTINGS" />
-                    <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.ACTION_SECURITY_SETTINGS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-                <data android:scheme="https" android:host="://blog.chromium.org/" />
+
+                <data
+                    android:host="://blog.chromium.org/"
+                    android:scheme="https" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-                <data android:scheme="https" android:host="://www.chromium.org/getting-involved" />
+
+                <data
+                    android:host="://www.chromium.org/getting-involved"
+                    android:scheme="https" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.content.pm.action.CONFIRM_PERMISSIONS" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <receiver android:name="com.anddevw.getchromium.GetWidgetProvider" android:label="updater">
+
+        <receiver
+            android:name=".GetWidgetProvider"
+            android:label="updater">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
-            <meta-data android:name="android.appwidget.provider"
+
+            <meta-data
+                android:name="android.appwidget.provider"
                 android:resource="@xml/widget" />
         </receiver>
+
     </application>
 
 </manifest>

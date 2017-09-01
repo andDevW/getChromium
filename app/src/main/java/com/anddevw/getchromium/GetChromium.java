@@ -1,7 +1,9 @@
 package com.anddevw.getchromium;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
@@ -10,15 +12,25 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -37,7 +49,9 @@ import com.android.volley.toolbox.StringRequest;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
+import static android.support.design.R.styleable.MenuItem;
 import static com.anddevw.getchromium.R.id.fabA;
 
 
@@ -47,25 +61,14 @@ import static com.anddevw.getchromium.R.id.fabA;
 
 public class GetChromium extends AppCompatActivity {
 
-    private static final String PREF_DARK_THEME = "dark_theme";
-    private static final String PREFS_NAME = "prefs";
 
     private ProgressDialog mProgressDialog;
-
     private static final String TAG = "getChromium";
     public static final String WIDGET_BUTTON = "com.anddevw.getchromium.WIDGET_BUTTON";
-
     private RequestQueue mRequestQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-
-        // Set dark theme as default.
-        boolean useDarkTheme = preferences.getBoolean(PREF_DARK_THEME, true);
-        if (useDarkTheme) {
-            setTheme(R.style.AppTheme_Dark_NoActionBar);
-        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -75,15 +78,12 @@ public class GetChromium extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-            // Spread the word about 'chrome://flags'
-            Snackbar.make(view, "ENABLE EXPERIMENTAL FEATURES\nIn Chromium, navigate to chrome://flags", 6000)
-                        .setAction("Action", null).show();
                 runSetup();
                 downloadLatest();
             }
         });
 
+        // Gear button for direct access to 'Unknown sources' (<API25
         ImageButton imageButton = (ImageButton) findViewById(R.id.buttonCog);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,17 +91,7 @@ public class GetChromium extends AppCompatActivity {
                 launchSecuritySettings();
             }
         });
-
-        Switch toggle = (Switch) findViewById(R.id.switch1);
-        toggle.setChecked(useDarkTheme);
-        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton view, boolean isChecked) {
-                toggleTheme(isChecked);
-
-            }
-        });
-
+        // Chromium 'Getting Involved'
         Button buttonA = (Button) findViewById(R.id.button1);
         buttonA.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,16 +99,6 @@ public class GetChromium extends AppCompatActivity {
                 openBlogA();
             }
         });
-    }
-
-    // Changes the app theme from default(dark) to non-default(light).
-    private void toggleTheme(boolean darkTheme) {
-        SharedPreferences.Editor editor = getSharedPreferences(PREFS_NAME, MODE_PRIVATE).edit();
-        editor.putBoolean(PREF_DARK_THEME, darkTheme);
-        editor.apply();
-        Intent intent = getIntent();
-        finish();
-        startActivity(intent);
     }
 
     private void runSetup() {
@@ -305,7 +285,6 @@ public class GetChromium extends AppCompatActivity {
         }
     }
 
-
     // Link to Chromium Project page 'Getting Involved'.
     private void openBlogA() {
         String urlA = "https://www.chromium.org/getting-involved";
@@ -316,6 +295,30 @@ public class GetChromium extends AppCompatActivity {
         }
     }
 
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.activity_main_drawer, menu);
+//        return true;
+//    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.update_app:
+                //update();
+                return true;
+            case R.id.about_app:
+                //
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
     @Override
     protected void onStop () {
         super.onStop();
@@ -324,6 +327,8 @@ public class GetChromium extends AppCompatActivity {
         if (mRequestQueue != null) {
             mRequestQueue.cancelAll(TAG);
         }
-
     }
 }
+
+
+

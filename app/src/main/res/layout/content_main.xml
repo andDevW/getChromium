@@ -13,34 +13,21 @@
     tools:showIn="@layout/activity_main"
     android:hapticFeedbackEnabled="false">
 
-    <Switch
-        android:showText="false"
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginRight="@dimen/fab_margin"
-        android:soundEffectsEnabled="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
-
     <TextView
         android:id="@+id/textView1"
         android:text="@string/chromium_description_01"
         android:typeface="sans"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="@dimen/main_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/switch1"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/textView4"
         android:text="@string/chromium_description_04"
         android:typeface="sans"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="@dimen/main_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
@@ -50,7 +37,7 @@
     <TextView
         android:id="@+id/textView2"
         android:text="@string/chromium_description_02"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="@dimen/main_text"
         android:typeface="sans"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,7 +49,7 @@
         android:id="@+id/textView3"
         android:text="@string/chromium_description_03"
         android:typeface="sans"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="@dimen/main_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView2"
@@ -72,24 +59,23 @@
         android:id="@+id/textView5"
         android:text="@string/chromium_description_05"
         android:typeface="sans"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="@dimen/main_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView3"
-        android:layout_marginTop="10dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignEnd="@+id/textView1"
+        android:layout_marginTop="37dp" />
 
     <TextView
         android:id="@+id/textView7"
         android:text="@string/chromium_description_07"
         android:typeface="sans"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="@dimen/main_text"
         android:autoLink="web"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView5"
-        android:layout_alignParentStart="true" />
+        android:layout_alignStart="@+id/textView5" />
 
     <Button
         android:id="@+id/button1"
@@ -97,11 +83,12 @@
         android:typeface="sans"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:elevation="4dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="33dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView7"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/textView7" />
+        android:layout_below="@+id/textView5"
+        android:layout_alignStart="@+id/textView7" />
+
+
 
 </RelativeLayout>
