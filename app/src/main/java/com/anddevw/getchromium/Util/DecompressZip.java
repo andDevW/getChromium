@@ -2,7 +2,7 @@
 package com.anddevw.getchromium.Util;
 
 import android.util.Log;
-
+import com.anddevw.getchromium.IDownloadProgress;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,9 +16,9 @@ import java.util.zip.ZipInputStream;
 public class DecompressZip {
     private static final int BUFFER_SIZE=8192;
 
-    private final String apkzip;
-    private final String address;
-    private final byte[] buffer;
+    private String apkzip;
+    private String address;
+    private byte[] buffer;
 
     public DecompressZip(String zipFile, String location) {
         apkzip = zipFile;
@@ -26,7 +26,7 @@ public class DecompressZip {
         buffer = new byte[BUFFER_SIZE];
         dirChecker("");
     }
-    public void unzip() {
+    public void unzip(IDownloadProgress downloadProgress) {
         FileInputStream finstream = null;
         ZipInputStream zinstream = null;
         OutputStream foutstream = null;
@@ -46,7 +46,9 @@ public class DecompressZip {
                 } else {
                     tmp = File.createTempFile( "decomp", ".tmp", outputDir );
                     foutstream = new BufferedOutputStream(new FileOutputStream(tmp));
-                    DownloadChromiumApk.copyStream(zinstream, foutstream, buffer, BUFFER_SIZE);
+                    DownloadChromiumApk.copyStream(zinstream, foutstream, buffer, BUFFER_SIZE,
+                            (int)zentry.getSize(), downloadProgress);
+
                     zinstream.closeEntry();
                     foutstream.close();
                     foutstream = null;

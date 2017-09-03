@@ -184,7 +184,7 @@ public class GetChromium extends AppCompatActivity {
         mRequestQueue.add(stringRequest);
     }
 
-    private class DownloadTask extends AsyncTask<String, Void, Exception> {
+    private class DownloadTask extends AsyncTask<String, Integer, Exception> {
         @Override
         protected void onPreExecute() {
             showProgress();
@@ -194,7 +194,13 @@ public class GetChromium extends AppCompatActivity {
         protected Exception doInBackground(String... params) {
             String url = params[0];
             try {
-                downloadAllAssets(url);
+                downloadAllAssets(url, new IDownloadProgress() {
+                    @Override
+
+                    public void onProgress(int done, int total) {
+                         publishProgress(done, total);
+                     }
+                 });
             } catch (Exception e) {
                 return e;
             }
@@ -202,11 +208,16 @@ public class GetChromium extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(Exception result) {
-            dismissProgress();
-            if (result == null) {
-                return;
+        protected void onProgressUpdate(Integer... values) {
+            updateProgress(values[0], values[1]);
             }
+
+            @Override
+            protected void onPostExecute(Exception result) {
+                dismissProgress();
+                if (result == null) {
+
+                }
 
             Toast.makeText(GetChromium.this, result.getLocalizedMessage(),
                     Toast.LENGTH_LONG).show();
@@ -218,7 +229,7 @@ public class GetChromium extends AppCompatActivity {
         mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         mProgressDialog.setTitle(getString(R.string.progress_title));
         mProgressDialog.setMessage(getString(R.string.progress_detail));
-        mProgressDialog.setIndeterminate(true);
+        mProgressDialog.setIndeterminate(false);
         mProgressDialog.setCancelable(false);
         mProgressDialog.setProgress(0);
         mProgressDialog.setProgressNumberFormat(null);
@@ -226,25 +237,26 @@ public class GetChromium extends AppCompatActivity {
         mProgressDialog.show();
     }
 
-    private void dismissProgress() {
-        if (mProgressDialog != null && mProgressDialog.
-                isShowing() && mProgressDialog.getWindow() != null) {
-            try {
-                mProgressDialog.dismiss();
-            } catch ( IllegalArgumentException ignore ) {
-            }
-        }
+    protected void updateProgress(int done, int total) {
+        mProgressDialog.setMax(total);
+        mProgressDialog.setProgress(done);
 
-        mProgressDialog = null;
     }
 
-    private void downloadAllAssets( String url ) {
+    protected void dismissProgress() {
+        if (mProgressDialog != null && mProgressDialog.isShowing() && mProgressDialog.getWindow() != null) {
+
+        mProgressDialog = null;
+        }
+    }
+
+    private void downloadAllAssets( String url,  IDownloadProgress downloadProgress ) {
         File zipDir =  GetStorage.getDir(this, "tmp");
         File zipFile = new File( zipDir.getPath() + "/temp.zip" );
         File outputDir = GetStorage.getDir(this, "getChromium");
         try {
-            DownloadChromiumApk.download(url, zipFile, zipDir);
-            unzipFile( zipFile, outputDir );
+            DownloadChromiumApk.download(url, zipFile, zipDir, downloadProgress);
+            unzipFile( zipFile, outputDir, downloadProgress );
         } finally {
             zipFile.delete();
          instChromium();
@@ -266,10 +278,10 @@ public class GetChromium extends AppCompatActivity {
         deleteAPk();
     }
 
-    private void unzipFile(File zipFile, File destination) {
+    protected void unzipFile(File zipFile, File destination, IDownloadProgress downloadProgress) {
         DecompressZip decomp = new DecompressZip( zipFile.getPath(),
                 destination.getPath() + File.separator );
-        decomp.unzip();
+        decomp.unzip(downloadProgress);
         dismissProgress();
     }
 
