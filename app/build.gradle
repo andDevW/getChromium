@@ -9,7 +9,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 23
         versionCode 20170830
-        versionName "4.1"
+        versionName "4.1 beta 1"
     }
     buildTypes {
         release {
