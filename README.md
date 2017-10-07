@@ -46,7 +46,7 @@ getChromium uses:
 * [Volley](https://android.googlesource.com/platform/frameworks/volley/)
 
 ### License
-[![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
+[![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](https://www.gnu.org/licenses/gpl-3.0.en.html)  
 [GNU General Public License version 3](http://www.gnu.org/licenses/gpl.txt)
 
 
