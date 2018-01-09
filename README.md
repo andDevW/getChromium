@@ -31,7 +31,7 @@ width="320" height="569" />
 
  ### Notice: The F-droid Fork of getChromium is Dangerously Out-of-Date
    The F-droid fork of getChromium is built using a library that was deprecated over 2 years ago.  
-   Until the F-droid fork is updated to the official volley library, I cannot recommend it or link to it.
+   Until the F-droid fork is updated to the official volley library, I cannot recommend it or link to it.  
    More information on the deprecated library https://github.com/mcxiaoke/android-volley
 
    
