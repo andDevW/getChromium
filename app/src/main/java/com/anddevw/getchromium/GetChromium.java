@@ -55,8 +55,8 @@ import static android.support.design.R.styleable.MenuItem;
 import static com.anddevw.getchromium.R.id.fabA;
 
 
-// Created by andDevW(Andrew Wright) ©2015-2017.
-// andrew@andDevW.com
+// Created by Andrew Wright (andDevW) ©2015-2017.
+// andDevW@gmail.com
 
 
 public class GetChromium extends AppCompatActivity {
