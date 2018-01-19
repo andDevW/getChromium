@@ -27,7 +27,7 @@ width="320" height="569" />
 ***  
 <img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/where_to_get_getChromium.png"/>  
 <br>  
-<a href="http://anddevw.com/assets/apk/getchromium/app-release.apk" target="_blank"><img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/getgetChromium_APK.png" alt="Get it on F-Droid"/></a>
+<a href="http://anddevw.com/assets/getchromium/app-release.apk" target="_blank"><img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/getgetChromium_APK.png" alt="Get it on F-Droid"/></a>
 
  ### Notice: The F-droid Fork of getChromium is Dangerously Out-of-Date
    The F-droid fork of getChromium is built using a library that was deprecated over 2 years ago.  
