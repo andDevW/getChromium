@@ -29,10 +29,7 @@ width="320" height="569" />
 <br>  
 <a href="http://anddevw.com/assets/apk/getchromium/app-release.apk" target="_blank"><img src="https://github.com/andDevW/getChromium/blob/res/getChromium_RES/getgetChromium_APK.png" alt="Get it on F-Droid"/></a>
 
- ### Notice: The F-droid Fork of getChromium is Dangerously Out-of-Date
-   The F-droid fork of getChromium is built using a library that was deprecated over 2 years ago.  
-   Until the F-droid fork is updated to the official volley library, I cannot recommend it or link to it.  
-   More information on the deprecated library https://github.com/mcxiaoke/android-volley
+<a href="https://f-droid.org/repository/browse/?fdid=com.anddevw.getchromium" target="_blank"><img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid"/></a>
 
    
 
