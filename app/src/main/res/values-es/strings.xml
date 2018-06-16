@@ -1,0 +1,15 @@
+<resources xmlns:http="http://schemas.android.com/tools">
+    <!-- Strings related to Layout -->
+    <string name="chromium_description_01">Instala la última versión de Chromium.</string>
+    <string name="chromium_description_02">Las compilaciones de Chromium no se actualizan automáticamente.</string>
+    <string name="chromium_description_03">Para actualizar simplemente instale Chromium nuevamente.</string>
+    <string name="chromium_description_04">// Las últimas compilaciones pueden tener errores.</string>
+    <string name="chromium_description_05">APK cortesía del equipo de Chromium</string>
+
+    <string name="chromium_button_02">Involucrarse</string>
+
+    <string name="progress_title">Por favor, espera.</string>
+    <string name="progress_detail">Descargando APK de Chromium...</string>
+
+
+</resources>
