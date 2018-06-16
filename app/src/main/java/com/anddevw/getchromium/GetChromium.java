@@ -10,6 +10,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -83,7 +84,7 @@ public class GetChromium extends AppCompatActivity {
             }
         });
 
-        // Gear button for direct access to 'Unknown sources' (<API25
+        // Gear button for direct access to 'Unknown sources' (<API25) or 'Install unknown apps' (>API25)
         ImageButton imageButton = (ImageButton) findViewById(R.id.buttonCog);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,16 +131,17 @@ public class GetChromium extends AppCompatActivity {
         return false;
     }
 
-    // Chromium won't install unless 'Unknown sources' are allowed in the system-level settings.
+    // Chromium won't install unless 'Unknown sources' or 'Install unknown apps' are allowed in the system-level settings.
     private void launchSecuritySettings() {
-
-            // Display Settings > Security > 'Unknown sources'
-            Intent launchSettingsIntent = new Intent(android.provider.Settings.ACTION_SECURITY_SETTINGS);
-            launchSettingsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(launchSettingsIntent);
-          //finish();
-        }
-
+        Intent launchSettingsIntent = Build.VERSION.SDK_INT >= 26 ?
+        // Settings > Apps & notifications > Advanced > Special app access > 'Install unknown apps'
+        new Intent("android.settings.MANAGE_UNKNOWN_APP_SOURCES") :
+        // Display Settings > Security > 'Unknown sources'
+        new Intent(android.provider.Settings.ACTION_SECURITY_SETTINGS);
+        launchSettingsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(launchSettingsIntent);
+        //finish();
+    }
 
     private void downloadLatest() {
 
