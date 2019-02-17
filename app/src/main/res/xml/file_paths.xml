@@ -1,3 +1,0 @@
-<paths xmlns:android="http://schemas.android.com/apk/res/android">
-    <external-path  name="chromium_apk" path="Android/data/com.anddevw.getchromium/files/getChromium/apks"/>
-</paths>

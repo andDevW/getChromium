@@ -1,54 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".GetChromium">
+    android:background="@color/backgroundColor"
+    tools:context=".MainActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:typeface="sans"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="match_parent">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:typeface="sans"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            android:elevation="4dp"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_main" />
-
-    <RelativeLayout
-        android:id="@+id/wrapper"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:foregroundGravity="center_vertical">
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fabA"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_margin="@dimen/fab_margin"
-            android:src="@drawable/ic_getchromium" />
+            android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/buttonCog"
-            android:background="@drawable/cog_button"
-            android:elevation="4dp"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignBottom="@+id/fabA"
-            android:layout_toStartOf="@+id/fabA" />
-    </RelativeLayout>
-</android.support.design.widget.CoordinatorLayout>
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="32dp"
+                android:text="@string/app_name"
+                android:textColor="@android:color/white"
+                android:textSize="32sp" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:text="@string/chromium_description" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/get_involved_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/get_involved"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/unknown_sources_settings_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="?attr/selectableItemBackground"
+                android:drawableStart="@drawable/ic_settings"
+                android:drawablePadding="16dp"
+                android:drawableTint="@android:color/white"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="@string/security_settings"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/download_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_getchromium" />
+
+</FrameLayout>

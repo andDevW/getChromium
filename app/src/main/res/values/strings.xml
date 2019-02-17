@@ -1,46 +1,36 @@
 <resources xmlns:http="http://schemas.android.com/tools">
-    <string name="app_name">getChromium</string>
-    <!-- Developer andDevW preferences -->
-    <string name="pref_default_display_message">Bernie Sanders for President in 2020!</string>
-    <string name="pref_default_url_message">https://go.berniesanders.com/page/content/join-us/</string>
-
+    <string name="app_name">Get Chromium</string>
 
     <!-- Strings related to Layout -->
-    <string name="chromium_description_01">Installs the latest build of Chromium.</string>
-    <string name="chromium_description_02">Chromium builds don\'t auto-update.</string>
-    <string name="chromium_description_03">To update just install Chromium again.</string>
-    <string name="chromium_description_04">// Latest builds may be buggy.</string>
-    <string name="chromium_description_05">APK courtesy of the Chromium team</string>
+    <string name="chromium_description">
+        Installs the latest build of Chromium.
+        \nChromium builds don\'t auto-update.
+        \nTo update just install Chromium again.
+        \n
+        \nNOTE: Latest builds may be buggy.
+        \n
+        \nAPK courtesy of the Chromium team
+        \n
+        \n
+        How to Safely Install Chromium:
+        \n 1. Allow Unknown sources.
+        \n 2. Install Chromium
+        \n 3. Turn off Unknown sources
+        \n
+        \nIt is unsafe to leave your device with \'Unknown sources\' enabled.
+        \nTo minimize your attack surface follow these simple steps.
+        \nGetChromium is designed to install Chromium the in the safest possible way.
+        \nLeaving your Settings with \'Unknown sources\' enabled means your device is in a vulnerable state 24/7.
+        \nThe only safe way to install or update Chromium without Google\'s help is manually.
+        \nThe Chromium team releases Chromium APK constantly.
+        \nTo keep your Chromium browser up to date simply install Chromium again.
+        \nAll of your bookmarks and settings will be exactly as they were in the previous version.
+    </string>
 
-    <string name="chromium_description_06"></string>
+    <string name="get_involved">Get involved</string>
 
-    <string name="chromium_description_07">https://www.chromium.org</string>
-
-    <!-- Strings related to Instructions -->
-    <string name="chromium_description_08">How to Safely Install Chromium:</string>
-    <string name="chromium_description_09">1.Allow Unknown sources.</string>
-    <string name="chromium_description_10">2.Install Chromium</string>
-    <string name="chromium_description_11">3.Turn off Unknown sources</string>
-    <string name="chromium_description_12">It is unsafe to leave your device with \'Unknown sources\' enabled.</string>
-    <string name="chromium_description_13">To minimize your attack surface follow these simple steps.</string>
-    <string name="chromium_description_15">getChromium is designed to install Chromium the in the safest possible way.</string>
-    <string name="chromium_description_16">Leaving your Settings with \'Unknown sources\' enabled means your device is in a vulnerable state 24/7.</string>
-    <string name="chromium_description_18">The only safe way to install or update Chromium without Google\'s help is manually.</string>
-    <string name="chromium_description_19">The Chromium team releases Chromium APK constantly.</string>
-    <string name="chromium_description_20">To keep your Chromium browser up to date simply install Chromium again.</string>
-    <string name="chromium_description_21">All of your bookmarks and settings will be exactly as they were in the previous version.</string>
-
-
-    <string name="chromium_button_01"></string>
-    <string name="chromium_button_02">get involved</string>
-    <string name="chromium_button_03"></string>
-
-    <string name="progress_title">please wait.</string>
-    <string name="progress_detail">downloading Chromium APK...</string>
-    <string name="share">Share</string>
-    <string name="about">About</string>
-    <string name="dialog_set_theme">Set Theme</string>
-    <string name="action_settings">Settings</string>
-
-
+    <string name="please_wait">Please wait</string>
+    <string name="downloading_chromium_apk">Downloading Chromium APK...</string>
+    <string name="device_is_not_online">Device is not online</string>
+    <string name="security_settings">Security settings</string>
 </resources>
