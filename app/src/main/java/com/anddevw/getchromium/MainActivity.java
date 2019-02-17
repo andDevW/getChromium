@@ -31,8 +31,6 @@ import com.android.volley.toolbox.StringRequest;
 
 import java.io.File;
 
-import static com.anddevw.getchromium.R.id.download_fab;
-
 // Created by Andrew Wright (andDevW) ©2015-2017.
 // andDevW@gmail.com
 
@@ -53,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.backgroundColor));
         }
 
-        findViewById(download_fab).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.download_fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
