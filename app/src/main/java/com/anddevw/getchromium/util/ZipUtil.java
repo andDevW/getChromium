@@ -13,14 +13,15 @@ import java.util.zip.ZipInputStream;
 
 
 public class ZipUtil {
+
     private static final int BUFFER_SIZE = 8192;
 
-    private final String apkzip;
+    private final String apkZip;
     private final String address;
     private final byte[] buffer;
 
     public ZipUtil(String zipFile, String location) {
-        apkzip = zipFile;
+        apkZip = zipFile;
         address = location;
         buffer = new byte[BUFFER_SIZE];
         dirChecker("");
@@ -35,7 +36,7 @@ public class ZipUtil {
         File tmp = null;
 
         try {
-            fileInputStream = new FileInputStream(apkzip);
+            fileInputStream = new FileInputStream(apkZip);
             zipInputStream = new ZipInputStream(fileInputStream);
             ZipEntry zipEntry;
             while ((zipEntry = zipInputStream.getNextEntry()) != null) {
