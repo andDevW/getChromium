@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -172,13 +173,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void installChromium() {
-        // Install package ChromePublic.apk(Chromium for Android).
-        Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-        intent.setDataAndType(Uri.fromFile(
-                new File(String.valueOf(StorageUtil.getDir
-                        (this, "getChromium/chrome-android/apks/ChromePublic.apk")))),
-                "application/vnd.android.package-archive");
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        final File apkFile = StorageUtil.getDir(this, "getChromium/chrome-android/apks/ChromePublic.apk");
+
+        Uri uri = FileProvider.getUriForFile(this, BuildConfig.APPLICATION_ID + ".provider", apkFile);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setDataAndType(uri, "application/vnd.android.package-archive");
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         startActivity(intent);
 
         // Call to delete 'ContentShell.apk'

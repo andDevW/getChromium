@@ -8,9 +8,9 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class StorageUtil {
+
     private static final String EXT_STORAGE_ROOT_PREFIX = "/Android/data/";
     private static final String EXT_STORAGE_ROOT_SUFFIX = "/files/";
-    private static final String TAG = "ExternalStorage";
     private static final StringBuilder sStoragePath = new StringBuilder();
 
     public static File getDir(Context context, String dirName) {
